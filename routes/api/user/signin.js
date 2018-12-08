@@ -34,6 +34,27 @@ router.post('/', (req, res) => {
                         message: 'Bad password'
                     });
                 } else {
+                    /*
+                     *    Delete inactive sessions
+                     */
+                    const userId = users[0]._id;
+                    UserSession.find({sessionId: userId}, (err, session) => {
+                       if(err) {
+                           res.send({
+                               message: 'Server error'
+                           })
+                       } else {
+                           if(session.length > 0) {
+                               session.forEach(sessionId => {
+                                   sessionId.remove()
+                               })
+                           }
+                       }
+                    });
+                    /*
+                     *  Create New Session
+                     */
+
                     const userSession = new UserSession();
                     userSession.sessionId = user._id;
                     // userSession.save().then(session => res.json(session));

@@ -14,4 +14,11 @@ export default class {
         }).then((res) => res.json())
             .then(data => data)
     }
+
+    static userVerify(token) {
+        return fetch('http://localhost:5000/api/user/verify?token='+token)
+            .then((res) => res.json())
+            .then(data => data)
+            .catch((err) => console.log(err))
+    }
 }

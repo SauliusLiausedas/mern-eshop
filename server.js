@@ -8,7 +8,6 @@ const verify = require('./routes/api/user/verify');
 const logout = require('./routes/api/user/logout');
 
 const app = express();
-
 // CORS exceptions
 app.use((req, res, next) => { //doesn't send response just adjusts it
     res.header("Access-Control-Allow-Origin", 'http://localhost:3000'); //* to give access to any origin

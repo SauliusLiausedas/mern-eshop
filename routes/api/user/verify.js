@@ -11,11 +11,11 @@ router.get('/', (req, res) => {
     }, (err, sessions) => {
         if(err) {
             return res.send({
-                success: 'false',
-                message: 'Server error' + err
+                success: false,
+                message: 'This session is inactive'
             })
         }
-        if(sessions.length != 1) {
+        if(sessions.length !== 1) {
             return res.send({
                 success: false,
                 message: 'Not signed in'
