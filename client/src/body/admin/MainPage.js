@@ -34,7 +34,7 @@ class MainPage extends Component {
         } else {
             return (
                 <div>
-                    ADMIN
+                    Admin
                 </div>
             )
         }
