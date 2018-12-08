@@ -8,14 +8,28 @@ const verify = require('./routes/api/user/verify');
 const logout = require('./routes/api/user/logout');
 
 const app = express();
+
+// CORS exceptions
+app.use((req, res, next) => { //doesn't send response just adjusts it
+    res.header("Access-Control-Allow-Origin", 'http://localhost:3000'); //* to give access to any origin
+    res.header(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept, Authorization" //to give access to all the headers provided
+    );
+    if(req.method === 'OPTIONS'){
+        res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET'); //to give access to all the methods provided
+        return res.status(200).json({});
+    }
+    next(); //so that other routes can take over
+});
 // BodyParser
 app.use(bodyParser.json());
 // DB CONFIG
-const db = require('./config/keys').mongoURI
+const db = require('./config/keys').mongoURI;
 // Connect to DB
 mongoose.connect(db, {useNewUrlParser: true})
     .then(() => console.log('MongoDB Connected'))
-    .catch((error => console.log('Error: '+ error)))
+    .catch((error => console.log('Error: '+ error)));
 
 app.use('/api/items', items);
 app.use('/api/user/signup', signup);
@@ -25,6 +39,6 @@ app.use('/api/user/logout', logout);
 
 const port = process.env.PORT || 5000;
 
-app.listen(port, () => console.log(`Server successfully started on port ${port}`))
+app.listen(port, () => console.log(`Server successfully started on port ${port}`));
 
 

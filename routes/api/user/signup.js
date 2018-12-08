@@ -25,7 +25,7 @@ router.post('/', (req, res) => {
                    message: 'Server Error'
                })
            } else if (previousUsers.length > 0) {
-               res.end({
+               res.send({
                    success: false,
                    message: 'User already exists.'
                })
