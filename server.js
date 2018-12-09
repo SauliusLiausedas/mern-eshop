@@ -7,6 +7,7 @@ const signin = require('./routes/api/user/signin');
 const verify = require('./routes/api/user/verify');
 const logout = require('./routes/api/user/logout');
 const navItem = require('./routes/api/navItem');
+const news = require('./routes/api/news');
 
 const app = express();
 // CORS exceptions
@@ -38,6 +39,7 @@ app.use('/api/user/signin', signin);
 app.use('/api/user/verify', verify);
 app.use('/api/user/logout', logout);
 app.use('/api/navItem', navItem);
+app.use('/api/news', news);
 
 const port = process.env.PORT || 5000;
 

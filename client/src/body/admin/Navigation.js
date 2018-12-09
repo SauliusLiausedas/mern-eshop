@@ -55,12 +55,12 @@ class Navigation extends Component {
 
                         )
                     })}
-                    <li className={'navItem'}><input type={'text'}
+                    <li className={'navItem newItem'}><input type={'text'}
                          onChange={(e) => this.setState({newNavItemName: e.target.value})}
                          placeholder={'Naujas meniu punktas'}
                          value={this.state.newNavItemName}
                          onKeyPress={(e) => this.addNavItem(e)}/></li>
-                    <li className={'navItem'}><Link to={'/admin/nustatymai'}>Nustatymai </Link></li>
+                    <li className={'navItem newItem'}><Link to={'/admin/nustatymai'}>Nustatymai </Link></li>
                 </nav>
             )
         }

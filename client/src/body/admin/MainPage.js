@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
-import help from '../../services/helperfunctions'
+import help from '../../services/helperfunctions';
+import '../../stylesheets/sass/mainpage.css';
 import LoadingPage from "../other/LoadingPage";
 import Navigation from "./Navigation";
+import MainText from "./components/MainText"
 
 class MainPage extends Component {
     constructor(props) {
@@ -9,13 +11,10 @@ class MainPage extends Component {
         this.state = {
             verified: false,
             isLoading: false,
+            pageNews: ''
         }
     }
-    componentWillMount() {
-        this.verification()
-    }
-
-    async verification() {
+    async componentWillMount() {
         this.setState({isLoading: true});
         let verified = await help.verification();
         if (verified) { this.setState({isLoading: false}) }
@@ -30,6 +29,9 @@ class MainPage extends Component {
             return (
                 <div>
                     <Navigation/>
+                    <div className={'background-mainPage'}>
+                        <MainText threads={this.state.pageNews}/>
+                    </div>
                 </div>
             )
         }

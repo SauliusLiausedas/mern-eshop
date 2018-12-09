@@ -2,6 +2,7 @@ import userActions from "./userActions";
 
 export default class {
 
+    // Verify Admin
     static async verification() {
         const token = localStorage.getItem('token');
         let authorized = await userActions.userVerify(token);
@@ -13,4 +14,19 @@ export default class {
             return false
         }
     }
+
+    // Check if Image URL is working
+    static checkImageURL(url) {
+        return new Promise(function (resolve, reject) {
+            const img = new Image();
+            img.onerror = function () {
+                reject("Wrong URL");
+            };
+            img.onload = function () {
+                resolve(url);
+            };
+            img.src = url;
+        });
+    }
+
 }

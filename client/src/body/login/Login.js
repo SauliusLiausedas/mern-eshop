@@ -36,7 +36,7 @@ class Login extends Component {
 
     render() {
         return (
-            <div className={'background'}>
+            <div className={'background-login'}>
                 {this.state.isLoading ?
                 <form className={'loginInputDiv'}>
                     <LoadingPage page={'login'}/>
