@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import help from '../../services/helperfunctions'
-import LoadingPage from "../other/LoadingPage";
 import Navigation from "./Navigation";
+import help from "../../services/helperfunctions";
 
-class MainPage extends Component {
+class AdminHome extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -11,6 +10,7 @@ class MainPage extends Component {
             isLoading: false,
         }
     }
+
     componentWillMount() {
         this.verification()
     }
@@ -22,18 +22,13 @@ class MainPage extends Component {
     }
 
     render(){
-        if(this.state.isLoading) {
-            return (
-                <LoadingPage page={'pageCenter'}/>
-            )
-        } else {
-            return (
-                <div>
-                    <Navigation/>
-                </div>
-            )
-        }
+        return(
+            <div>
+                <Navigation/>
+                ADMIN HOME
+            </div>
+        )
     }
 }
 
-export default MainPage
+export default AdminHome

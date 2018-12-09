@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../../stylesheets/sass/Login.css'
-import userActions from '../../services/useractions'
+import userActions from '../../services/userActions'
 import LoadingPage from "../other/LoadingPage";
 
 class Login extends Component {

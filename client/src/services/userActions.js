@@ -1,5 +1,6 @@
 export default class {
 
+    // User Login
     static userLogin(userName, userPassword) {
         return fetch('http://localhost:5000/api/user/signin', {
             method: 'POST',
@@ -15,8 +16,9 @@ export default class {
             .then(data => data)
     }
 
+    // Verify User when in /admin
     static userVerify(token) {
-        return fetch('http://localhost:5000/api/user/verify?token='+token)
+        return fetch(`http://localhost:5000/api/user/verify?token=${token}`)
             .then((res) => res.json())
             .then(data => data)
             .catch((err) => console.log(err))

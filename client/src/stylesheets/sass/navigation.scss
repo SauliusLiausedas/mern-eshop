@@ -1,0 +1,21 @@
+$main-color1: rgba(255,165, 42,1);	// Main Secondary color (1) */
+$main-color2: rgba(255,200,125,1);
+$main-color3: rgba(255,182, 82,1);
+$main-color4: rgba(255,148,  0,1);
+$main-color5: rgba(199,115,  0,1);
+nav {
+    margin: auto;
+    padding: 10px;
+    background-color: $main-color2;
+    .navItem {
+        font-size: 1.2em;
+        margin-left: 3%;
+        list-style-type: none;
+        display: inline;
+    }
+    .removeButton {
+        color: rgb(200, 0, 0);
+        cursor: pointer;
+        margin-left: 5px;
+    }
+}

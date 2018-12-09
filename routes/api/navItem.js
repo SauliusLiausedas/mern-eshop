@@ -8,23 +8,64 @@ const Navigation = require('../../models/Navigation');
 router.post('/', (req, res) => {
     const { body } = req;
     const { name } = body;
+    let { position } = body;
     if(!name) {
-        res.send({
+        return res.send({
             success: false,
             message: 'Must add name'
         })
     } else {
-        const newNavItem = new Navigation();
-        newNavItem.name = name;
-        newNavItem.save().then(item => res.json(item));
+        if (!position) {
+            Navigation.countDocuments((err, pos) => {
+                if (err) {
+                    return res.send({
+                        success: false,
+                        message: 'Server error ' + err
+                    })
+                }
+                saveItem(name, pos, res)
+            });
+        } else {
+            Navigation.find({position: position}, async (err, docs) => {
+                if (err) {
+                    return res.send({
+                        success: false,
+                        message: 'Server error: ' + err
+                    })
+                } else if (docs.length > 0) {
+                    await Navigation.countDocuments((err, pos) => {
+                        if (err) {
+                            return res.send({
+                                success: false,
+                                message: 'Server error: ' + err
+                            })
+                        } else {
+                            saveItem(name, pos, res)
+                        }
+                    })
+                } else {
+                    saveItem(name, position, res)
+                }
+            });
+        }
     }
 });
+
+function saveItem(name, position, res) {
+    const newNavItem = new Navigation();
+    newNavItem.name = name;
+    newNavItem.position = position;
+    newNavItem.save()
+        .then(item => res.json(item))
+        .catch(err => console.log(err));
+    console.log(newNavItem);
+}
 
 /*
  *  Get all navigation items
  */
 router.get('/', (req, res) => {
-    Navigation.find().sort({name: 1})
+    Navigation.find().sort({position: 1})
         .then(navItems => res.json(navItems))
 });
 
