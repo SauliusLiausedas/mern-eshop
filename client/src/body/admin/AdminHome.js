@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navigation from "./Navigation";
+import Navigation from "./components/Navigation";
 import help from "../../services/helperfunctions";
 
 class AdminHome extends Component {

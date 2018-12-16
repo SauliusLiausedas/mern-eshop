@@ -36,7 +36,7 @@ class CreateNewThread extends  Component {
 
     saveThread() {
         news.createThread(this.state.header, this.state.text, this.state.image)
-            .then(() => this.props.cancelNewThread())
+            .then(() => this.props.cancelNewThread('refresh'))
             .catch(err => console.log(err))
     }
 
@@ -50,11 +50,11 @@ class CreateNewThread extends  Component {
                 </div>
                 <div className={'newsFeedBox'}>
                     <div>
-                        <input maxLength={100} onChange={(e) => this.addHeader(e)} placeholder={'Straipsnio pavadinimas'} />
-                        <textarea minLength={200} onChange={(e) => this.addText(e)} rows={'10'} cols={'60'} placeholder={'Straipsnio tekstas'} />
+                        <input className={'newThreadName'} maxLength={100} onChange={(e) => this.addHeader(e)} placeholder={'Straipsnio pavadinimas'} />
+                        <textarea className={'newThreadTextBox'} minLength={200} onChange={(e) => this.addText(e)} placeholder={'Straipsnio tekstas'} />
                     </div>
                     <div>
-                        <input onChange={(e) => this.addImageURL(e)}
+                        <input className={'newThreadImageURL'} onChange={(e) => this.addImageURL(e)}
                                type={'text'} placeholder={'Nuotraukos URL'}
                                 onKeyPress={(e) => this.checkImage(e)}/>
                         <img src={this.state.image} alt={'New thread'} className={'addThreadImage'}/>

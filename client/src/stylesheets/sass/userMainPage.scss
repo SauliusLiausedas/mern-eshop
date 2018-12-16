@@ -1,0 +1,58 @@
+// ================= TOPLINE OF LANDPAGE =================
+// TODO responsive
+.mainpageTopLine {
+    background-color: #ffa52a;
+    width: 100%;
+    height: 20px;
+    padding: 5px 0;
+    color: white;
+    .topLineText {
+        text-align: right;
+        width: 90%;
+        margin: auto;
+        .topLineItem {
+            display: inline;
+            margin-right: 15px;
+        }
+        .topLineItem:hover {
+            color: yellow;
+        }
+    }
+}
+// ================= SEARCH =================
+.searchSection {
+    text-align: center;
+    width: 80%;
+    height: 130px;
+    margin: 0 auto;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 30% 60% 10%;
+    .searchLogo {
+        align-self: center;
+        width: auto;
+        height: 95%;
+        float: left;
+    }
+    .searchBar {
+        height: 35px;
+        font-size: 25px;
+        padding: 5px 15px;
+        align-self: center;
+        border-radius: 20px;
+        outline: none;
+        border: 1.5px solid slategray;
+        color: slategray;
+    }
+    .searchBar::placeholder {
+        color: antiquewhite;
+    }
+    .searchBar:focus {
+        color: #c77300;
+        border: 1.5px solid #ffa52a;
+    }
+    .searchBar::selection {
+        color: white;
+        background-color: #ffa52a;
+    }
+}

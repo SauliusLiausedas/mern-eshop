@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import help from '../../services/helperfunctions';
 import '../../stylesheets/sass/mainpage.css';
 import LoadingPage from "../other/LoadingPage";
-import Navigation from "./Navigation";
+import Navigation from "./components/Navigation";
 import MainText from "./components/MainText"
 
 class MainPage extends Component {

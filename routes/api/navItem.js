@@ -52,8 +52,11 @@ router.post('/', (req, res) => {
 });
 
 function saveItem(name, position, res) {
+    let href = name.split(' ').join('');
+    href = href.normalize('NFD').replace(/[\u0300-\u036f]/g, "");
     const newNavItem = new Navigation();
     newNavItem.name = name;
+    newNavItem.href = href;
     newNavItem.position = position;
     newNavItem.save()
         .then(item => res.json(item))

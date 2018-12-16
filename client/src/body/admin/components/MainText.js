@@ -30,8 +30,11 @@ class MainText extends Component {
     //     console.log(this.state.pageNews[index])
     // }
 
-    addThread() {
-
+    newThread(e) {
+        if(e === 'refresh') {
+            this.getNews()
+        }
+        this.setState({createNew: !this.state.createNew})
     }
 
     render() {
@@ -40,7 +43,7 @@ class MainText extends Component {
                 <div className={'newsFeed'}>
                     <button className={'btn'} onClick={() => this.setState({createNew: true})}> Sukurti naują </button>
                     {this.state.createNew ?
-                        <CreateNewThread cancelNewThread={() => this.setState({createNew: !this.state.createNew})}/>
+                        <CreateNewThread cancelNewThread={(e) => this.newThread(e)}/>
                     :
                     ''}
                     {this.state.pageNews.map((thread, i) => {

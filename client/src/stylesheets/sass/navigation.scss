@@ -5,13 +5,16 @@ $main-color4: rgba(255,148,  0,1);
 $main-color5: rgba(199,115,  0,1);
 $main-color6: rgba(255,243,125,1);
 $links-font-size: 1.2em;
-nav {
+
+// ===================== ADMIN NAVIGATION ====================
+.navigation {
     z-index: 999;
     width: 100%;
-    position: fixed;
-    padding: 10px;
-    background-color: $main-color4;
-    box-shadow: 0 2px 3px 2px $main-color4;
+    padding: 15px;
+    background-color: #ffa52a;
+    box-shadow: 0 2px 3px 2px #ffa52a;
+    text-align: center;
+
     .navItem {
         color: $main-color6;
         font-size: $links-font-size;
@@ -20,16 +23,79 @@ nav {
         display: inline;
         transition: all 50ms;
     }
+
     .navItem:hover {
         border-bottom: 2px solid $main-color6;
-        transition: all 200ms;
     }
+
     .removeButton {
         color: rgb(200, 0, 0);
         cursor: pointer;
         margin-left: 5px;
     }
+
     .newItem {
         float: right;
+        height: 20px;
+        list-style-type: none;
+        margin-right: 3%;
+        color: $main-color6;
+        font-size: $links-font-size;
     }
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+    float: left;
+}
+
+.dropdown-content {
+    //display: none;
+    position: absolute;
+    right: 0;
+    left: 0;
+    background-color: $main-color4;
+    height: 0;
+    width: 130px;
+    box-shadow: 0 8px 16px 0 $main-color1;
+    transition: all 400ms;
+    a {
+        margin-top: 3px;
+        color: $main-color6;
+        padding: 12px 16px;
+        text-decoration: none;
+        display: none;
+    }
+}
+.dropdown-content { a:hover { background-color: $main-color5; } }
+.dropdown:hover  { .dropdown-content { height: 9em; display: block; transition: all 500ms; } }
+.dropNavItem {
+    color: $main-color6;
+    font-size: $links-font-size;
+    list-style-type: none;
+    display: inline-block;
+    height: 40px;
+}
+// ===================== USER NAVIGATION ====================
+.userNavItems {
+    margin: 0;
+    padding: 0;
+    .userNavItem {
+        display: inline;
+        color: $main-color6;
+        font-size: $links-font-size;
+        padding: 0 15px;
+        margin-left: 15px;
+    }
+    a:hover {
+      border-bottom: 2px solid $main-color6;
+    }
+}
+.subNavigation {
+    z-index: 999;
+    width: 100%;
+    padding: 5px;
+    background-color: $main-color4;
+    box-shadow: 0 2px 3px 2px $main-color4;
+    text-align: center;
 }

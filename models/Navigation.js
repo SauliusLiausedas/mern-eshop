@@ -7,6 +7,10 @@ const NavItemsSchema = new Schema({
         type: String,
         required: true
     },
+    href: {
+        type: String,
+        required: true
+    },
     position: {
         type: Number,
         required: true,
