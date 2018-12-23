@@ -7,6 +7,7 @@ import MainPage from "./body/admin/MainPage";
 import AdminHome from "./body/admin/AdminHome";
 import ErrorPage from "./body/other/Error";
 import UserMainPage from "./body/user/mainpage/UserMainPage";
+import AddItems from './body/admin/AddItems';
 
 
 class App extends Component {
@@ -34,6 +35,7 @@ class App extends Component {
                       <Route path="/admin/" component={ AdminHome } exact/>
                       <Route path="/admin/pagrindinis" component={ MainPage } exact/>
                       <Route path="/admin/biciuproduktai" component={ MainPage } exact/>
+                      <Route path="/admin/naujasproduktas" component={ AddItems } exact/>
                       <Route component={ ErrorPage } />
                   </Switch>
               </div>

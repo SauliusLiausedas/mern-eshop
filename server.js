@@ -24,6 +24,7 @@ app.use((req, res, next) => { //doesn't send response just adjusts it
     next(); //so that other routes can take over
 });
 // BodyParser
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json());
 // DB CONFIG
 const db = require('./config/keys').mongoURI;

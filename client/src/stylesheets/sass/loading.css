@@ -1,0 +1,34 @@
+.loadBox {
+  width: 100%;
+  margin: 0 auto;
+  border-radius: 30%;
+  padding: 3%;
+}
+
+.loadBox .beeLoadImage {
+  width: 50%;
+  height: auto;
+  margin: auto;
+}
+
+.loadBox h3 {
+  margin-top: -20px;
+}
+
+.center {
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+.navLoader {
+  height: 25px;
+  display: inline;
+  margin: 0;
+}
+
+h5 {
+  display: inline;
+  margin: 0;
+}
+/*# sourceMappingURL=loading.css.map */

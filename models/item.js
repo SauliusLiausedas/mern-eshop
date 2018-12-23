@@ -6,9 +6,28 @@ const ItemSchema = new Schema({
         type: String,
         required: true
     },
-    date: {
-        type: Date,
-        default: Date.now()
+    quantity: {
+        type: Number,
+        required: true
+    },
+    picture: {
+        type: String,
+        default: 'https://www.freeiconspng.com/uploads/no-image-icon-32.png'
+    },
+    category: {
+        type: String,
+        default: 'Miscellaneous'
+    },
+    price: {
+        type: Number,
+        required: true
+    },
+    description: {
+        type: String
+    },
+    discount: {
+        type: Boolean,
+        default: false
     }
 });
 

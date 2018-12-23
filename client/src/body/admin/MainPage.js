@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import help from '../../services/helperfunctions';
 import '../../stylesheets/sass/mainpage.css';
 import LoadingPage from "../other/LoadingPage";
-import Navigation from "./components/Navigation";
-import MainText from "./components/MainText"
+// import Navigation from "./components/Navigation";
+import MainText from "./components/MainText";
 
 class MainPage extends Component {
     constructor(props) {
@@ -28,7 +28,7 @@ class MainPage extends Component {
         } else {
             return (
                 <div>
-                    <Navigation/>
+                    {/* <Navigation/> */}
                     <div className={'background-mainPage'}>
                         <MainText threads={this.state.pageNews}/>
                     </div>

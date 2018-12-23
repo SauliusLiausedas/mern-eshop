@@ -1,0 +1,76 @@
+.background-login {
+  background-image: url("../../images/honey-background.jpg");
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 33% 34% 33%;
+      grid-template-columns: 33% 34% 33%;
+  -ms-grid-rows: 25% 42% 33%;
+      grid-template-rows: 25% 42% 33%;
+}
+
+.background-login .loginInputDiv {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  text-align: center;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  -ms-grid-row: 2;
+      grid-row-start: 2;
+  width: 100%;
+  border-radius: 20px;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.background-login .loginInputDiv input {
+  margin-top: 15px;
+  border: 1.5px solid black;
+  border-radius: 15px;
+  padding: 3px 10px;
+  outline: none;
+}
+
+.background-login .loginInputDiv input:focus {
+  -webkit-box-shadow: 0 0 2px 1px slategray;
+          box-shadow: 0 0 2px 1px slategray;
+}
+
+.background-login .loginInputDiv .name {
+  margin-top: 10%;
+}
+
+.background-login .loginInputDiv .password {
+  margin-top: 3%;
+}
+
+.background-login .loginInputDiv .loginBtn {
+  margin-top: 5%;
+}
+
+@media only screen and (max-width: 700px) {
+  .background {
+    -ms-grid-columns: auto auto auto auto;
+        grid-template-columns: auto auto auto auto;
+  }
+  .background .loginInputDiv {
+    grid-column-end: 4;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .background {
+    display: block;
+  }
+  .background .loginInputDiv {
+    width: 75%;
+    height: 400px;
+    margin: 20% auto;
+  }
+}
+/*# sourceMappingURL=Login.css.map */

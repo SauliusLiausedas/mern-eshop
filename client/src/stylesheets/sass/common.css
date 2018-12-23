@@ -1,0 +1,21 @@
+.btn {
+  outline: none;
+  border: 1.5px solid black;
+  border-radius: 15px;
+  background-color: transparent;
+  font-size: 0.8em;
+  padding: 1% 3%;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.btn:hover {
+  -webkit-box-shadow: 0 3px 3px 0 slategray;
+          box-shadow: 0 3px 3px 0 slategray;
+}
+
+.btn:active {
+  -webkit-box-shadow: 0 -1px 1px 0 slategray;
+          box-shadow: 0 -1px 1px 0 slategray;
+}
+/*# sourceMappingURL=common.css.map */
