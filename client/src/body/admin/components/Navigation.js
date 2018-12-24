@@ -4,10 +4,10 @@ import navigationActions from '../../../services/navigationActions';
 import LoadingPage from "../../other/LoadingPage";
 import '../../../stylesheets/sass/navigation.css';
 import 'react-dropdown/style.css';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faArrowDown, faAngleDown } from '@fortawesome/free-solid-svg-icons'
-library.add(faArrowDown, faAngleDown);
+// import { library } from '@fortawesome/fontawesome-svg-core';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+// import { faArrowDown, faAngleDown } from '@fortawesome/free-solid-svg-icons'
+// library.add(faArrowDown, faAngleDown);
 class Navigation extends Component {
     constructor(props) {
         super(props);
@@ -21,6 +21,7 @@ class Navigation extends Component {
 
     componentWillMount() {
         this.setNavItems()
+        console.log(this.props)
     }
 
     async setNavItems() {
@@ -56,7 +57,7 @@ class Navigation extends Component {
             return(
                 <nav>
                     <div className={'dropdown'}>
-                        <li className={'dropNavItem'}> Produktai <FontAwesomeIcon icon="angle-down" /> </li>
+                        <li className={'dropNavItem'}> Produktai </li>
                         <div className={'dropdown-content'}>
                             <a href={'#alpha'}>ALPHA</a>
                             <a href={'#beta'}>BETA</a>

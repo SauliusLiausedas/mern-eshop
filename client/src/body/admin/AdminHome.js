@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import '../../stylesheets/sass/navigation.css';
-// import Navigation from "./components/Navigation";
 import Navigation from "../user/UserNavigation";
 import help from "../../services/helperfunctions";
+import AdminNavigation from './components/AdminNavigation';
 
 class AdminHome extends Component {
     constructor(props) {
@@ -27,7 +27,7 @@ class AdminHome extends Component {
         return(
             <div>
                 <Navigation/>
-                ADMIN HOME
+                <AdminNavigation/>
             </div>
         )
     }

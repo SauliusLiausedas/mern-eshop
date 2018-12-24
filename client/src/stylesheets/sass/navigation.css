@@ -1,5 +1,7 @@
 .navigation {
-  z-index: 999;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  z-index: 9999;
   width: 100%;
   padding: 15px;
   background-color: #ffa52a;
@@ -39,7 +41,6 @@
 
 .dropdown {
   position: relative;
-  display: inline-block;
   float: left;
 }
 
@@ -108,5 +109,60 @@
   -webkit-box-shadow: 0 2px 3px 2px #ff9400;
           box-shadow: 0 2px 3px 2px #ff9400;
   text-align: center;
+}
+
+/*============================ ADMIN NAVIGATION ==============================*/
+.adminNavigation {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  top: 0;
+  left: -300px;
+  -webkit-box-shadow: 3px 0 5px 3px rgba(255, 243, 125, 0.6);
+          box-shadow: 3px 0 5px 3px rgba(255, 243, 125, 0.6);
+  position: absolute;
+  padding-top: 100px;
+  width: 250px;
+  height: 100%;
+  background-color: rgba(255, 243, 125, 0.6);
+  z-index: -1;
+  color: #c77300;
+  font-size: 1.5em;
+  -webkit-transition: 500ms;
+  transition: 500ms;
+}
+
+.adminNavigation ul {
+  margin: 0;
+  padding: 20px;
+}
+
+.adminNavigation ul li {
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+
+.adminNavigationShow {
+  left: 0;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
+.toggleMenuButton {
+  float: left;
+  background-color: transparent;
+  margin-top: -40px;
+  margin-left: 20px;
+  font-size: 1.6em;
+  border: none;
+  outline: none;
+  color: #fff37d;
+}
+
+.toggleMenuButton:hover {
+  cursor: pointer;
+}
+
+.toggleMenuButton:active {
+  font-size: 1.5em;
 }
 /*# sourceMappingURL=navigation.css.map */

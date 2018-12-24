@@ -1,0 +1,44 @@
+.newUserBtn {
+    padding: 5px;
+    width: 100px;
+    height: 30px;
+    position: relative;
+    left: 75%;
+}
+thead {
+    user-select: none;
+}
+.tableDiv {
+    width: 80%;
+    margin: 50px auto;
+    border: 1px solid black;
+    text-align: center;
+    height: 500px;
+    overflow-y: scroll;
+    transition: all 0.5s;
+}
+.short {
+    height: 150px;
+    transition: all 0.5s;
+}
+.userTable {
+    width: 100%;
+}
+.removeButton {
+    user-select: none;
+    color: rgb(200, 0, 0);
+    cursor: pointer;
+}
+.removeButton:hover {
+    color: red;
+}
+
+//===================== NEW USER =======================//
+.newUser {
+    width: 80%;
+    margin: 3% auto;
+    text-align: center;
+}
+.submitBtn {
+    margin-top: 20px;
+}

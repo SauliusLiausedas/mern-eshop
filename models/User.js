@@ -14,6 +14,14 @@ const UserSchema = new Schema({
     isDeleted: {
         type: Boolean,
         default: false
+    },
+    date: {
+        type: Date,
+        default: Date.now()
+    },
+    isAdministrator: {
+        type: Boolean,
+        default: false
     }
 });
 

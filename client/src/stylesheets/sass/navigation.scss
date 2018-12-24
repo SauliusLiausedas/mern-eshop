@@ -8,7 +8,8 @@ $links-font-size: 1.2em;
 
 // ===================== ADMIN NAVIGATION ====================
 .navigation {
-    z-index: 999;
+    box-sizing: border-box;
+    z-index: 9999;
     width: 100%;
     padding: 15px;
     background-color: #ffa52a;
@@ -45,7 +46,6 @@ $links-font-size: 1.2em;
 }
 .dropdown {
     position: relative;
-    display: inline-block;
     float: left;
 }
 
@@ -98,4 +98,50 @@ $links-font-size: 1.2em;
     background-color: $main-color4;
     box-shadow: 0 2px 3px 2px $main-color4;
     text-align: center;
+}
+
+/*============================ ADMIN NAVIGATION ==============================*/
+
+.adminNavigation {
+    box-sizing: border-box;
+    top: 0;
+    left: -300px;
+    box-shadow: 3px 0 5px 3px  rgba(255,243,125,0.6);
+    position: absolute;
+    padding-top: 100px;
+    width: 250px;
+    height: 100%;
+    background-color:  rgba(255,243,125,0.6);
+    z-index: -1;
+    color: $main-color5;
+    font-size: 1.5em;
+    transition: 500ms;
+    ul {
+        margin: 0;
+        padding: 20px;
+        li {
+            list-style-type: none;
+            margin-bottom: 10px;
+        }
+    }
+}
+.adminNavigationShow {
+    left: 0;
+    transition: all 500ms;
+}
+.toggleMenuButton {
+    float: left;
+    background-color: transparent;
+    margin-top: -40px;
+    margin-left: 20px;
+    font-size: 1.6em;
+    border: none;
+    outline: none;
+    color: $main-color6;
+}
+.toggleMenuButton:hover {
+    cursor: pointer;
+}
+.toggleMenuButton:active {
+    font-size: 1.5em;
 }

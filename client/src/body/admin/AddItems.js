@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
+import Navigation from "../user/UserNavigation";
 
 class AddItems extends Component {
     render() {
         return(
             <div>
-                Add Items
+                <Navigation/>
             </div>
         )
     }
