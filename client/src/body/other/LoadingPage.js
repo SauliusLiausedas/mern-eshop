@@ -1,6 +1,7 @@
 import React from 'react';
-import beeLoader from '../../images/bee-loading.gif'
-import '../../stylesheets/sass/loading.css'
+import beeLoader from '../../images/bee-loading.gif';
+import circleLoader from '../../images/loading-circle.gif';
+import '../../stylesheets/sass/loading.css';
 
 function LoadingPage(props) {
     if(props.page === 'login') {
@@ -23,6 +24,10 @@ function LoadingPage(props) {
                     <img className={'navLoader'} src={'http://66.media.tumblr.com/0018b4de0800b3e822bc5a7895ccfc62/tumblr_nbp3g3IwBz1sq0qq9o1_400.gif'} alt={'loading'}/>
                     <h5> Please wait... </h5>
                 </nav>
+            )
+    } else if(props.page === 'adminUsers') {
+            return(
+                <img src={circleLoader} className={'loadCircle'} alt={'Loading'}/>
             )
     } else {
         return (

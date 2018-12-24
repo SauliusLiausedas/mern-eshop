@@ -26,6 +26,7 @@ class Login extends Component {
         e.preventDefault();
         this.setState({isLoading: true});
         let signInResponse = await userActions.userLogin(this.state.userName, this.state.userPassword);
+        console.log(signInResponse);
         if(signInResponse && signInResponse.token) {
             localStorage.setItem('token', signInResponse.token);
             this.props.history.push('/admin');

@@ -13,7 +13,8 @@ router.post('/', (req, res) => {
         });
     } else {
         User.find({
-            name: name
+            name: name,
+            isDeleted: false
         }, (err, users) => {
             if(err) {
                 return res.send({
@@ -24,7 +25,7 @@ router.post('/', (req, res) => {
                 if (users.length !== 1) {
                     return res.send({
                         success: false,
-                        message: 'No such username'
+                        message: 'No such username or user deleted'
                     });
                 }
                 const user = users[0];

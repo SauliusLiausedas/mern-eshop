@@ -17,7 +17,7 @@ function UserNavigation(props) {
                 {props.subnav ? <li className={'userNavItem'} onMouseEnter={() => props.subnav('kiti')}><Link to={'/kiti'}> Kiti Produktai <FontAwesomeIcon icon="angle-down" /></Link></li> : <li className={'userNavItem'}><Link to={'/kiti'}> Kiti Produktai </Link></li>}
                 <li className={'userNavItem'}><Link to={'/naujienos'}> Naujienos </Link></li>
                 <li className={'userNavItem'}><Link to={'/kontaktai'}> Kontaktai </Link></li>
-                {props.subnav ? '' : <li className='userNavItem' onClick={() => helperfunctions.logout()}>Logout</li>}
+                {props.subnav ? '' : <li className='userNavItem' onClick={() => helperfunctions.logout()}><Link to={'#'}>Logout</Link></li>}
             </ul>
         </nav>
     )

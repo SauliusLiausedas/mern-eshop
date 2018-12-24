@@ -19,9 +19,9 @@ class AddNewUser extends Component {
             .then(data => {
                 if(data.success === true) {
                     window.alert('User Added');
-                    this.props.added()
+                    this.props.added();
                 } else {
-                    console.log(data)
+                    window.alert(data.message);
                 }
             })
             .catch(err => console.log(err))
