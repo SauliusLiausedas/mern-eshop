@@ -3,7 +3,9 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faArrowDown, faAngleDown } from '@fortawesome/free-solid-svg-icons'
+import helperfunctions from '../../services/helperfunctions';
 library.add(faArrowDown, faAngleDown);
+
 
 function UserNavigation(props) {
     return(
@@ -15,6 +17,7 @@ function UserNavigation(props) {
                 {props.subnav ? <li className={'userNavItem'} onMouseEnter={() => props.subnav('kiti')}><Link to={'/kiti'}> Kiti Produktai <FontAwesomeIcon icon="angle-down" /></Link></li> : <li className={'userNavItem'}><Link to={'/kiti'}> Kiti Produktai </Link></li>}
                 <li className={'userNavItem'}><Link to={'/naujienos'}> Naujienos </Link></li>
                 <li className={'userNavItem'}><Link to={'/kontaktai'}> Kontaktai </Link></li>
+                {props.subnav ? '' : <li className='userNavItem' onClick={() => helperfunctions.logout()}>Logout</li>}
             </ul>
         </nav>
     )

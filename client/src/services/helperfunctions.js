@@ -29,4 +29,14 @@ export default class {
         });
     }
 
+    static async logout() {
+        const token = localStorage.getItem('token')
+        let logged = await userActions.logout(token)
+        if(logged.success) {
+            window.location.replace('/login')
+        } else {
+            return false
+        }
+    }
+
 }

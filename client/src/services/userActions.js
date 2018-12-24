@@ -66,4 +66,12 @@ export default class {
         })
         return addUser
     }
+    
+    // User logout
+    static logout(token) {
+        return fetch(`http://localhost:5000/api/user/logout?token=${token}`)
+            .then(res => res.json())
+            .then(data => data)
+            .catch(err => console.log(err))
+    }
 }

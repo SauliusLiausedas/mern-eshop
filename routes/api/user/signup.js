@@ -45,24 +45,24 @@ router.post('/', (req, res) => {
                                 message: 'User already exists.'
                             })
                         } else {
-                            if(authorized) {
-                                    const newUser = new User();
-                                    newUser.name = name;
-                                    newUser.password = newUser.generateHash(password);
-                                    if(admin) {
-                                        newUser.isAdministrator = true
-                                    }
-                                    newUser.save().then(user => res.send({
-                                        success: true,
-                                        message: `User successfully added with name ${newUser.name}`
-                                    }))
-                                    .catch(err => res.json(err))
-                            } else {
-                                res.send({
-                                    success: false,
-                                    message: 'Unauthorized'
-                                })
-                            }
+                                if(authorized) {
+                                        const newUser = new User();
+                                        newUser.name = name;
+                                        newUser.password = newUser.generateHash(password);
+                                        if(admin) {
+                                            newUser.isAdministrator = true
+                                        }
+                                        newUser.save().then(user => res.send({
+                                            success: true,
+                                            message: `User successfully added with name ${newUser.name}`
+                                        }))
+                                        .catch(err => res.json(err))
+                                } else {
+                                    res.send({
+                                        success: false,
+                                        message: 'Unauthorized'
+                                    })
+                                }
                         }
                     });
                 }
