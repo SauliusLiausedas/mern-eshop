@@ -20,6 +20,8 @@ class AddNewUser extends Component {
                 if(data.success === true) {
                     window.alert('User Added')
                     this.props.added()
+                } else {
+                    console.log(data)
                 }
             })
             .catch(err => console.log(err))
