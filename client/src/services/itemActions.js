@@ -1,30 +1,28 @@
 export default class {
     // Get navigation ItemsTable
-    static getNavItems() {
-        return fetch(`http://localhost:5000/api/navItem`)
+    static getItems() {
+        return fetch(`http://localhost:5000/api/items`)
             .then((res) => res.json())
             .then(data => data)
             .catch((err) => console.log(err))
     }
-    // Add navigation Item
-    static addNavItem(itemName) {
-        return fetch(`http://localhost:5000/api/navItem`, {
+
+    static addItem(item, token) {
+        return fetch(`http://localhost:5000/api/items`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                name: itemName,
+                item: item,
+                token: token
             })
         })
-            .then(res => res.json())
-            .then(response => console.log(response))
-            .catch(err => console.log(err))
     }
-    // Delete navigation Item
-    static removeNavItem(id) {
-        return fetch(`http://localhost:5000/api/navItem/${id}`, {
+
+    static deleteItem(id, token) {
+        return fetch(`http://localhost:5000/api/items/${id}/${token}`, {
             method: 'DELETE'
         }).then(res => res.json())
             .then(response => console.log(response))

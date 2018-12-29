@@ -26,9 +26,10 @@ class MainText extends Component {
             .then(() => this.getNews())
     }
 
-    // editThread(index, threadId) {
-    //     console.log(this.state.pageNews[index])
-    // }
+    editThread(index) {
+        //TODO make thread editable
+        console.log(this.state.pageNews[index])
+    }
 
     newThread(e) {
         if(e === 'refresh') {
@@ -52,7 +53,7 @@ class MainText extends Component {
                             <div key={i}>
                                 <div className={'threadDateAndButtons'}>
                                     <p className={'threadDate'}>Straipsnis pridėtas {threadDate}</p>
-                                    <button className={'btn editBtn'} onClick={() => this.editThread(i, thread._id)}> Taisyti</button>
+                                    <button className={'btn editBtn'} onClick={() => this.editThread(i)}> Taisyti</button>
                                     <button className={'btn deleteBtn'} onClick={() => this.deleteThread(thread._id)}> Ištrinti</button>
                                 </div>
                                 <div className={'newsFeedBox'}>

@@ -22,12 +22,22 @@ const ItemSchema = new Schema({
         type: Number,
         required: true
     },
-    description: {
-        type: String
+    properties: {
+        size: {
+            type: Number,
+            default: 0
+        },
+        description: {
+            type: String,
+            default: 'Nėra aprašymo'
+        }
     },
     discount: {
         type: Boolean,
         default: false
+    },
+    priceWithDiscount: {
+        type: Number
     }
 });
 

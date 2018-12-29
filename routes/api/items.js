@@ -1,5 +1,7 @@
 const express = require('express');
 const router = express.Router();
+const UserSession = require('../../models/UserSession');
+const User = require('../../models/User');
 
 const Item = require('../../models/item');
 
@@ -15,8 +17,10 @@ router.get('/', (req, res) => {
 // @access  Public
 router.post('/', (req, res) => {
     const { body } = req;
-    const { name, quantity, picture, category, price, description, discount} = body;
+    const { item, token } = body;
+    const { name, quantity, picture, category, price, properties, discount } = item;
     let success = true;
+
 
     if(!name || !quantity || !price) {
         success = false;
@@ -26,48 +30,115 @@ router.post('/', (req, res) => {
         })
     }
 
-
-
     const newItem = new Item({
         name: name,
         quantity: quantity,
         picture: picture,
         category: category,
         price: price,
-        description: description,
+        properties: {
+            weight: properties.weight,
+            description: properties.description
+        },
         discount: discount
     });
 
     if(success) {
-        newItem.save()
-        .then((item) => {
-            res.json({
-                success: true,
-                message: `Item is added with name ${item.name}`
+        UserSession.find({
+            _id: token
+        }).then(session => {
+            userId = session[0].sessionId;
+            User.find({
+                _id: userId,
+                isAdministrator: true
             })
+                .then((user) => {
+                    if(user.length === 1) {
+                        newItem.save()
+                        .then((item) => {
+                            res.json({
+                                success: true,
+                                message: `Item is added with name ${item.name}`
+                            })
+                        })
+                        .catch((err) => {
+                            if(err.name === "ValidationError") {
+                                res.status(400).json({
+                                    success: false,
+                                    message: 'Wrong type of item value'
+                                })
+                            } else {
+                                res.status(404).json({
+                                    success: false,
+                                    message: err
+                                })
+                            }
+                        })
+                    } else {
+                        return res.status(404).send({
+                            success: false,
+                            message: 'Must be admin to add items!'
+                        })
+                    }
+                })
         })
-        .catch((err) => {
-            if(err.name === "ValidationError") {
-                res.status(400).json({
-                    success: false,
-                    message: 'Wrong type of item value'
-                })
-            } else {
-                res.status(404).json({
-                    success: false,
-                    message: err
-                })
-            }
+    } else {
+        res.status(404).send({
+            success: false,
+            message: 'Server error'
         })
     }
 });
 
 // @route   DELETE api/items/:id
 // @desc    Delete Item
-router.delete('/:id', (req, res) => {
-    Item.findById(req.params.id)
-        .then(item => item.remove().then(() => res.json({success: true})))
-        .catch(err => res.status(404).json(err.message));
-})
+router.delete('/:id/:token', (req, res) => {
+    UserSession.find({
+        _id: req.params.token,
+        isDeleted: false
+    })
+        .then((session) => {
+            User.find({
+                _id: session[0].sessionId,
+                isAdministrator: true
+            })
+                .then(user => {
+                    if (user.length < 1) {
+                        res.send({
+                            success: false,
+                            message: 'Only admin can delete items'
+                        })
+                    } else {
+                        Item.findById(req.params.id)
+                            .then(item => item.remove()
+                                .then(() => res.send({
+                                    success: true,
+                                    message: 'Item deleted'
+                                }))
+                            )
+                            .catch(err => res.status(404).json(err.message));
+                    }
+                })
+                .catch(err => {
+                    res.send({
+                        success: false,
+                        message: 'Server Error: ' + err
+                    })
+                })
+        })
+        .catch(err => {
+            if(err.name === 'TypeError') {
+                res.send({
+                    success: false,
+                    message: 'No permission'
+                })
+            } else {
+                res.send({
+                    success: false,
+                    message: 'Server Error: ' + err
+                })
+            }
+        })
+});
 
 module.exports = router;

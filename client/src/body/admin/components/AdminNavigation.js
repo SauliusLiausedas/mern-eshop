@@ -31,8 +31,9 @@ class AdminNavigation extends Component {
                 <button className='toggleMenuButton' onClick={() => this.toggleMenu()}><FontAwesomeIcon icon='bars'/></button>
                 <div className={'adminNavigation ' + this.isActive()}>
                     <ul>
+                        <Link to='/admin/pagrindinis'><li className={'adminNav'}>Pagrindinis</li></Link>
                         <Link to='/admin/vartotojai'><li className='adminNav'>Tvarkyti vartotojus</li></Link>
-                        <Link to='/prekes'></Link><li className='adminNav'>Tvarkyti prekes</li>
+                        <Link to='/admin/prekes'><li className='adminNav'>Tvarkyti prekes</li></Link>
                         <li className='adminNav'>Tvarkyti ...</li>
                     </ul>
                 </div>

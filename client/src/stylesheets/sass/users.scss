@@ -23,6 +23,17 @@ thead {
 }
 .userTable {
     width: 100%;
+    border-collapse: collapse;
+    tr {
+        max-height: 100px;
+    }
+    td {
+        max-height: 100px;
+        max-width: 100px;
+        overflow: hidden;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+    }
 }
 .removeButton {
     user-select: none;

@@ -11,8 +11,7 @@ class MainPage extends Component {
         super(props);
         this.state = {
             verified: false,
-            isLoading: false,
-            pageNews: ''
+            isLoading: false
         }
     }
     async componentWillMount() {
@@ -32,7 +31,7 @@ class MainPage extends Component {
                     <div className={'background-mainPage'}>
                         <UserNavigation/>
                         <AdminNavigation/>
-                        <MainText threads={this.state.pageNews}/>
+                        <MainText/>
                     </div>
                 </div>
             )

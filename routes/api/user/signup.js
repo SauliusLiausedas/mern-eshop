@@ -6,20 +6,20 @@ const UserSession = require('../../../models/UserSession');
 router.post('/', (req, res) => {
    const { body } = req;
    const { name, password, admin, token } = body;
-   let authorized = false
-   let userId = ''
+   let authorized = false;
+   let userId = '';
     
     UserSession.find({
         _id: token
     }).then(session =>{
-        userId = session[0].sessionId
+        userId = session[0].sessionId;
         User.find({
             _id: userId,
             isAdministrator: true
          })
          .then((user) => {
              if(user.length === 1) {
-                 authorized = true
+                 authorized = true;
                  if(!name) {
                     res.send({
                         success: false,
@@ -52,7 +52,7 @@ router.post('/', (req, res) => {
                                         if(admin) {
                                             newUser.isAdministrator = true
                                         }
-                                        newUser.save().then(user => res.send({
+                                        newUser.save().then(() => res.send({
                                             success: true,
                                             message: `User successfully added with name ${newUser.name}`
                                         }))
