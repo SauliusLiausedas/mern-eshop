@@ -27,4 +27,11 @@ export default class {
         }).then(res => res.json())
             .then(response => console.log(response))
     }
+
+    static pickPromotedItems(quantity) {
+        return fetch(`http://localhost:5000/api/items/promoted/${quantity}`)
+            .then((res) => res.json())
+            .then(data => data)
+            .catch(err => console.log(err))
+    }
 }

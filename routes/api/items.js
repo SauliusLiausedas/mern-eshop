@@ -10,6 +10,23 @@ const Item = require('../../models/item');
 router.get('/', (req, res) => {
     Item.find().sort({ price: -1 })
         .then(items => res.json(items))
+        .catch((err) => {
+            console.log(err);
+            res.json(err);
+        })
+});
+
+// @route   GET api/items/promoted
+// @desc    Get number of promoted items
+
+router.get('/promoted/:quantity', (req, res) => {
+    let quantity = parseInt(req.params.quantity);
+    Item.find().sort({ clickPoints: -1}).limit(quantity)
+        .then(items => res.json(items))
+        .catch((err) => {
+            console.log(err);
+            res.json(err);
+        });
 });
 
 // @route   POST api/items

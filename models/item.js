@@ -38,6 +38,10 @@ const ItemSchema = new Schema({
     },
     priceWithDiscount: {
         type: Number
+    },
+    clickPoints: {
+        type: Number,
+        default: 0
     }
 });
 

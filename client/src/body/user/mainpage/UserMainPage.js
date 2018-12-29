@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import '../../../stylesheets/sass/userMainPage.css';
-import TopLine from "./components/TopLine";
+import TopLine from "../TopLine";
 import MainSearch from "./components/MainSearch";
 import UserNavigation from "../UserNavigation";
 import UserSubNavigation from "../UserSubNavigation";
+import PromotedItems from "./components/PromotedItems";
 
 class UserMainPage extends Component {
     constructor(props) {
@@ -28,6 +29,7 @@ class UserMainPage extends Component {
                 <MainSearch/>
                 <UserNavigation subNavHide={() => this.subNavHide()} subnav={(e) => this.subNavShow(e)}/>
                 {this.state.subNavigation ? <UserSubNavigation context={this.state.subNavContext} subnav={() => this.subNavHide()}/> : ''}
+                <PromotedItems/>
             </div>
         )
     }
