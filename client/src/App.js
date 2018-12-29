@@ -5,10 +5,11 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from "./body/login/Login";
 import MainPage from "./body/admin/MainPage";
 import AdminHome from "./body/admin/AdminHome";
-import ErrorPage from "./body/other/Error";
+import ErrorPage from "./body/other/handleErrors/Error";
 import UserMainPage from "./body/user/mainpage/UserMainPage";
 import AdminItems from './body/admin/AdminItems';
 import Users from './body/admin/Users';
+import SelectedItem from "./body/user/selectedItem/SelectedItem";
 
 
 class App extends Component {
@@ -32,6 +33,8 @@ class App extends Component {
               <div>
                   <Switch>
                       <Route path="/" component={ UserMainPage } exact/>
+                      {/*<Route path="/:category/" component={''} exact />*/}
+                      <Route path="/produktai/:category/:name" component={ SelectedItem } exact />
                       <Route path="/login" component={ Login } exact/>
                       <Route path="/admin/" component={ AdminHome } exact/>
                       <Route path="/admin/pagrindinis" component={ MainPage } exact/>

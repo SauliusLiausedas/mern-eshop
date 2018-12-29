@@ -56,3 +56,31 @@
         background-color: #ffa52a;
     }
 }
+/*======================PROMO ITEM================================*/
+.promoItems{
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    width: 80%;
+    margin: 3% auto 0 auto;
+    text-align: center;
+    color: orange;
+    .promoItem {
+        display: grid;
+        grid-template-rows: auto auto auto;
+        width: 100%;
+        height: 300px;
+        h3 {
+            margin: 0 auto;
+        }
+        .promoItemPicture {
+            width: 80%;
+            height: auto;
+            max-width: 180px;
+            max-height: 180px;
+        }
+        .promoDescription {
+            width: 80%;
+            margin: 0 auto;
+        }
+    }
+}

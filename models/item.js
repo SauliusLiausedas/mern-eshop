@@ -23,9 +23,9 @@ const ItemSchema = new Schema({
         required: true
     },
     properties: {
-        size: {
+        weight: {
             type: Number,
-            default: 0
+            default: 0.0
         },
         description: {
             type: String,

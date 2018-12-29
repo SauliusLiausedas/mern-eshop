@@ -13,6 +13,7 @@ function ItemsTable(props) {
                 <th> Svoris </th>
                 <th> Kaina </th>
                 <th> Nuolaida </th>
+                <th> Paspaudimai </th>
                 <th> Ištrinti </th>
             </tr>
             </thead>
@@ -29,6 +30,7 @@ function ItemsTable(props) {
                             <td>{item.properties.weight} kg</td>
                             <td>{item.price} &euro;</td>
                             <td>{item.discount ? 'Yra' : 'Nėra'}</td>
+                            <td>{item.clickPoints}</td>
                             <td><span onClick={() => props.removeItem(props.items[i]._id)}
                                       className='removeButton'>&#10008; </span></td>
                         </tr>
@@ -38,7 +40,7 @@ function ItemsTable(props) {
             :
                 <tbody>
                     <tr>
-                        <td colSpan={7}> Prekių nėra </td>
+                        <td style={{"height":"400px", "border":"none"}} colSpan={9}> Prekių nėra </td>
                     </tr>
                 </tbody>
             }

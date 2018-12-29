@@ -29,6 +29,20 @@ router.get('/promoted/:quantity', (req, res) => {
         });
 });
 
+// @route   PUT api/items
+// @desc    Edit clickPoints
+router.put('/clickpoints/:id', (req, res) => {
+    const id = req.params.id;
+    Item.findOneAndUpdate({ _id: id }, { $inc: { clickPoints: 1 } })
+        .then(() => res.send({
+            success: true,
+            message: 'Click points updated'
+        }))
+        .catch((err) => res.status(404).send({
+            success: false,
+            message: 'Server error: ' + err
+        }))
+});
 // @route   POST api/items
 // @desc    Create item
 // @access  Public

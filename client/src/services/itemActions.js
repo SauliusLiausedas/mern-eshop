@@ -30,8 +30,16 @@ export default class {
 
     static pickPromotedItems(quantity) {
         return fetch(`http://localhost:5000/api/items/promoted/${quantity}`)
-            .then((res) => res.json())
+            .then(res => res.json())
             .then(data => data)
-            .catch(err => console.log(err))
+            .catch((err) => err)
+    }
+
+    static increaseClickPoint(id) {
+        return fetch(`http://localhost:5000/api/items/clickpoints/${id}`, {
+            method: 'PUT'
+        })
+            .then(res => res.json())
+            .catch(err => err)
     }
 }

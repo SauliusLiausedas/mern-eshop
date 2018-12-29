@@ -3,23 +3,16 @@
   width: 100%;
   height: 20px;
   padding: 5px 0;
-  color: white;
-}
-
-.mainpageTopLine .topLineText {
-  text-align: right;
-  width: 90%;
-  margin: auto;
-}
-
-.mainpageTopLine .topLineText .topLineItem {
-  display: inline;
-  margin-right: 15px;
-}
-
-.mainpageTopLine .topLineText .topLineItem:hover {
-  color: yellow;
-}
+  color: white; }
+  .mainpageTopLine .topLineText {
+    text-align: right;
+    width: 90%;
+    margin: auto; }
+    .mainpageTopLine .topLineText .topLineItem {
+      display: inline;
+      margin-right: 15px; }
+    .mainpageTopLine .topLineText .topLineItem:hover {
+      color: yellow; }
 
 .searchSection {
   text-align: center;
@@ -27,62 +20,53 @@
   height: 130px;
   margin: 0 auto;
   padding: 0;
-  display: -ms-grid;
   display: grid;
-  -ms-grid-columns: 30% 60% 10%;
-      grid-template-columns: 30% 60% 10%;
-}
+  grid-template-columns: 30% 60% 10%; }
+  .searchSection .searchLogo {
+    align-self: center;
+    width: auto;
+    height: 95%;
+    float: left; }
+  .searchSection .searchBar {
+    height: 35px;
+    font-size: 25px;
+    padding: 5px 15px;
+    align-self: center;
+    border-radius: 20px;
+    outline: none;
+    border: 1.5px solid slategray;
+    color: slategray; }
+  .searchSection .searchBar::placeholder {
+    color: antiquewhite; }
+  .searchSection .searchBar:focus {
+    color: #c77300;
+    border: 1.5px solid #ffa52a; }
+  .searchSection .searchBar::selection {
+    color: white;
+    background-color: #ffa52a; }
 
-.searchSection .searchLogo {
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  width: auto;
-  height: 95%;
-  float: left;
-}
+/*======================PROMO ITEM================================*/
+.promoItems {
+  display: grid;
+  grid-template-columns: 25% 25% 25% 25%;
+  width: 80%;
+  margin: 3% auto 0 auto;
+  text-align: center;
+  color: orange; }
+  .promoItems .promoItem {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    width: 100%;
+    height: 300px; }
+    .promoItems .promoItem h3 {
+      margin: 0 auto; }
+    .promoItems .promoItem .promoItemPicture {
+      width: 80%;
+      height: auto;
+      max-width: 180px;
+      max-height: 180px; }
+    .promoItems .promoItem .promoDescription {
+      width: 80%;
+      margin: 0 auto; }
 
-.searchSection .searchBar {
-  height: 35px;
-  font-size: 25px;
-  padding: 5px 15px;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-  border-radius: 20px;
-  outline: none;
-  border: 1.5px solid slategray;
-  color: slategray;
-}
-
-.searchSection .searchBar::-webkit-input-placeholder {
-  color: antiquewhite;
-}
-
-.searchSection .searchBar:-ms-input-placeholder {
-  color: antiquewhite;
-}
-
-.searchSection .searchBar::-ms-input-placeholder {
-  color: antiquewhite;
-}
-
-.searchSection .searchBar::placeholder {
-  color: antiquewhite;
-}
-
-.searchSection .searchBar:focus {
-  color: #c77300;
-  border: 1.5px solid #ffa52a;
-}
-
-.searchSection .searchBar::-moz-selection {
-  color: white;
-  background-color: #ffa52a;
-}
-
-.searchSection .searchBar::selection {
-  color: white;
-  background-color: #ffa52a;
-}
 /*# sourceMappingURL=userMainPage.css.map */
