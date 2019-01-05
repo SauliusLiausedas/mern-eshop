@@ -4,7 +4,7 @@ import '../../stylesheets/sass/mainpage.css';
 import LoadingPage from "../other/LoadingPage";
 import MainText from "./components/MainText";
 import AdminNavigation from './components/AdminNavigation';
-import UserNavigation from '../user/UserNavigation';
+import UserNavigation from '../user/Navigation/UserNavigation';
 
 class MainPage extends Component {
     constructor(props) {

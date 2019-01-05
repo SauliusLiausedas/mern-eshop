@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Navigation from "../user/UserNavigation";
+import Navigation from "../user/Navigation/UserNavigation";
 import '../../stylesheets/sass/AdminItems.css';
 import LoadingPage from "../other/LoadingPage";
 import AdminNavigation from "./components/AdminNavigation";

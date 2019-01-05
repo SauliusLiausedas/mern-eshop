@@ -33,6 +33,7 @@ export default class {
     // Logout
     static async logout() {
         const token = localStorage.getItem('token');
+        localStorage.removeItem("token");
         let logged = await userActions.logout(token);
         if(logged.success) {
             window.location.replace('/login')

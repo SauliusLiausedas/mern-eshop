@@ -52,6 +52,7 @@ class PromotedItems extends Component {
                                         }}}>
                                         <img src={item.picture} alt={item.name} className={'promoItemPicture'}/>
                                     </Link>
+                                    <Link to={`/produktai/${item.category}`}><pre> {item.category} </pre></Link>
                                     <ItemDescription description={item.properties.description}/>
                                 </div>
                             )

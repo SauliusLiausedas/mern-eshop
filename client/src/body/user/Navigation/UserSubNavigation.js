@@ -29,20 +29,20 @@ function UserSubNavigation(props) {
                 </ul>
             </nav>
         )
-    // } else if (props.context === 'kiti') {
-    //     return (
-    //         <nav className={'subNavigation'} onMouseLeave={() => props.subnav()}>
-    //             <ul className={'userNavItems'}>
-    //                 <li className={'userNavItem'}><Link to={'/kiti/duonele'}> Bičių duonelė </Link></li>
-    //                 <li className={'userNavItem'}><Link to={'/biciuproduktai/nuodai'}> Bičių nuodai </Link></li>
-    //                 <li className={'userNavItem'}><Link to={'/biciuproduktai/pienelis'}> Bičių pienelis </Link></li>
-    //                 <li className={'userNavItem'}><Link to={'/biciuproduktai/medus'}> Medus </Link></li>
-    //                 <li className={'userNavItem'}><Link to={'/biciuproduktai/propolis'}> Propolis </Link></li>
-    //                 <li className={'userNavItem'}><Link to={'/biciuproduktai/vaskas'}> Vaškas </Link></li>
-    //                 <li className={'userNavItem'}><Link to={'/biciuproduktai/ziedadulkes'}> Žiedadulkės </Link></li>
-    //             </ul>
-    //         </nav>
-    //     )
+    } else if (props.context === 'kiti') {
+        return (
+            <nav className={'subNavigation'} onMouseLeave={() => props.subnav()}>
+                <ul className={'userNavItems'}>
+                    <li className={'userNavItem'}><Link to={'/kiti/duonele'}> Bičių duonelė </Link></li>
+                    <li className={'userNavItem'}><Link to={'/biciuproduktai/nuodai'}> Bičių nuodai </Link></li>
+                    <li className={'userNavItem'}><Link to={'/biciuproduktai/pienelis'}> Bičių pienelis </Link></li>
+                    <li className={'userNavItem'}><Link to={'/biciuproduktai/medus'}> Medus </Link></li>
+                    <li className={'userNavItem'}><Link to={'/biciuproduktai/propolis'}> Propolis </Link></li>
+                    <li className={'userNavItem'}><Link to={'/biciuproduktai/vaskas'}> Vaškas </Link></li>
+                    <li className={'userNavItem'}><Link to={'/biciuproduktai/ziedadulkes'}> Žiedadulkės </Link></li>
+                </ul>
+            </nav>
+        )
     } else {
         return(
             <div>

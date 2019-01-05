@@ -10,6 +10,7 @@ import UserMainPage from "./body/user/mainpage/UserMainPage";
 import AdminItems from './body/admin/AdminItems';
 import Users from './body/admin/Users';
 import SelectedItem from "./body/user/selectedItem/SelectedItem";
+import SelectedCategory from "./body/user/selectedcategory/SelectedCategory";
 
 
 class App extends Component {
@@ -33,7 +34,7 @@ class App extends Component {
               <div>
                   <Switch>
                       <Route path="/" component={ UserMainPage } exact/>
-                      {/*<Route path="/:category/" component={''} exact />*/}
+                      <Route path="/produktai/:category/" component={ SelectedCategory } exact />
                       <Route path="/produktai/:category/:name" component={ SelectedItem } exact />
                       <Route path="/login" component={ Login } exact/>
                       <Route path="/admin/" component={ AdminHome } exact/>

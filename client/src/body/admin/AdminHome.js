@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import '../../stylesheets/sass/navigation.css';
-import Navigation from "../user/UserNavigation";
+import Navigation from "../user/Navigation/UserNavigation";
 import help from "../../services/helperfunctions";
 import AdminNavigation from './components/AdminNavigation';
 

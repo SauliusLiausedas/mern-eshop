@@ -7,6 +7,13 @@ export default class {
             .catch((err) => console.log(err))
     }
 
+    static getSomeItems(limit, offset) {
+        return fetch(`http://localhost:5000/api/items/someitems/${limit}/${offset}`)
+            .then((res) => res.json())
+            .then(data => data)
+            .catch((err) => console.log(err))
+    }
+
     static addItem(item, token) {
         return fetch(`http://localhost:5000/api/items`, {
             method: 'POST',

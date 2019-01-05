@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import userActions from '../../services/userActions';
 import '../../stylesheets/sass/users.css';
-import UserNavigation from '../user/UserNavigation';
+import UserNavigation from '../user/Navigation/UserNavigation';
 import AdminNavigation from './components/AdminNavigation';
 import AddNewUser from './components/AddNewUser';
 import help from '../../services/helperfunctions';

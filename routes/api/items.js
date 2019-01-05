@@ -29,6 +29,20 @@ router.get('/promoted/:quantity', (req, res) => {
         });
 });
 
+// @route   GET api/items/someitems/:limit/:offset
+// @desc    Get number of items for MainItems in mainpage
+
+router.get('/someitems/:limit/:offset', (req, res) => {
+    let { limit, offset } = req.params;
+    limit = parseInt(limit);
+    offset = parseInt(offset);
+    Item.find().skip(offset).limit(limit)
+        .then(items => res.json(items))
+        .catch(err => {
+            res.json(err);
+        });
+});
+
 // @route   PUT api/items
 // @desc    Edit clickPoints
 router.put('/clickpoints/:id', (req, res) => {
