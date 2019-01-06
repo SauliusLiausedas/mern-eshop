@@ -14,6 +14,13 @@ export default class {
             .catch((err) => console.log(err))
     }
 
+    static getCategoryItems(category) {
+        return fetch(`http://localhost:5000/api/items/category/${category}`)
+            .then(res => res.json())
+            .then(data => data)
+            .catch(err => console.log(err))
+    }
+
     static getItemById(id) {
         return fetch(`http://localhost:5000/api/items/${id}`)
             .then(res => res.json())

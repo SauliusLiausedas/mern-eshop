@@ -1,5 +1,4 @@
 // ================= TOPLINE OF LANDPAGE =================
-// TODO responsive
 .mainpageTopLine {
     background-color: #ffa52a;
     width: 100%;
@@ -85,6 +84,10 @@
         }
     }
 }
+.itemsHeader {
+    text-align: center;
+    color: #ff9400;
+}
 //=====================MAIN ITEMS==========================
 .mainItemsBtn {
     text-align: center;
@@ -95,5 +98,8 @@
     }
     .loadMoreBtn {
         color: #c77300;
+        border-color: #ff9400;
+        font-size: 1.3em;
+        padding: 10px;
     }
 }

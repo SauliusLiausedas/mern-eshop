@@ -21,7 +21,7 @@ class UserMainPage extends Component {
                 <TopLine/>
                 <MainSearch/>
                 <UserNavigation subNavHide={() => this.subNavHide()} subnav={(e) => this.subNavShow(e)}/>
-                <h2> Populiariausios prekės </h2>
+                <h2 className={'itemsHeader'}> Populiariausios prekės </h2>
                 <PromotedItems/>
                 <MainItems/>
             </div>

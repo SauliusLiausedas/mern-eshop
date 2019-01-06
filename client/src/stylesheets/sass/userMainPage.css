@@ -70,6 +70,10 @@
       width: 80%;
       margin: 0 auto; }
 
+.itemsHeader {
+  text-align: center;
+  color: #ff9400; }
+
 .mainItemsBtn {
   text-align: center;
   width: 20%;
@@ -77,6 +81,9 @@
   .mainItemsBtn h3 {
     color: #c77300; }
   .mainItemsBtn .loadMoreBtn {
-    color: #c77300; }
+    color: #c77300;
+    border-color: #ff9400;
+    font-size: 1.3em;
+    padding: 10px; }
 
 /*# sourceMappingURL=userMainPage.css.map */

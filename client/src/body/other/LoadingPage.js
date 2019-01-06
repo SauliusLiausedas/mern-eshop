@@ -12,6 +12,13 @@ function LoadingPage(props) {
                 <h3> Loading... </h3>
             </div>
         )
+    } else if(props.page === 'news') {
+        return(
+            <div className={'newsLoading'}>
+                <img src={beeLoader} alt={'Loading'} className={'newsBeeLoadImage'}/>
+                <h3> Loading... </h3>
+            </div>
+        )
     } else if(props.page === 'pageCenter') {
         return (
             <div className={'center'}>

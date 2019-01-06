@@ -34,7 +34,6 @@ class SelectedItem extends Component {
 
     render() {
         const { item, isLoading } = this.state;
-        console.log(item);
         return (
             <div>
                 <TopLine/>
@@ -45,7 +44,7 @@ class SelectedItem extends Component {
                         <div className={'itemCol1'}>
                             <h1>{item.name}</h1>
                             <h3>{item.category}</h3>
-                            <img className={'selectedItemPicture'} src={item.picture} />
+                            <img alt={item.name} className={'selectedItemPicture'} src={item.picture} />
                             <h4> Svoris: {item.properties.weight}kg</h4>
                         </div>
                         <div className={'itemCol2'}>

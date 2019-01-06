@@ -11,6 +11,7 @@ import AdminItems from './body/admin/AdminItems';
 import Users from './body/admin/Users';
 import SelectedItem from "./body/user/selectedItem/SelectedItem";
 import SelectedCategory from "./body/user/selectedcategory/SelectedCategory";
+import News from "./body/user/news/News";
 
 
 class App extends Component {
@@ -36,6 +37,7 @@ class App extends Component {
                       <Route path="/" component={ UserMainPage } exact/>
                       <Route path="/produktai/:category/" component={ SelectedCategory } exact />
                       <Route path="/produktai/:category/:name" component={ SelectedItem } exact />
+                      <Route path="/naujienos" component={ News } exact />
                       <Route path="/login" component={ Login } exact/>
                       <Route path="/admin/" component={ AdminHome } exact/>
                       <Route path="/admin/pagrindinis" component={ MainPage } exact/>

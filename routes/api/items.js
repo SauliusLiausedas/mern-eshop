@@ -29,6 +29,23 @@ router.get('/promoted/:quantity', (req, res) => {
         });
 });
 
+//@route    GET api/items/category/:category
+//@desc     Get items by category
+
+router.get('/category/:category', (req, res) => {
+    let categoryName = req.params.category;
+    Item.find({category: categoryName})
+        .then(categoryItems => {
+            if(categoryItems.length > 0) {
+                res.json(categoryItems)
+            } else {
+                res.json('No items found')
+
+            }
+        })
+        .catch(err => res.json(err))
+});
+
 // @route   GET api/items/someitems/:limit/:offset
 // @desc    Get number of items for MainItems in mainpage
 
@@ -54,10 +71,11 @@ router.get('/someitems/:limit/:offset', (req, res) => {
 // @route   GET api/items/:id
 // @desc    Get item by ID
 router.get('/:id', (req, res) => {
-    const id = req.params.id
+    const id = req.params.id;
     Item.find({_id: id})
         .then(item => res.json(item))
         .catch(err => res.json(err))
+
 });
 
 // @route   PUT api/items

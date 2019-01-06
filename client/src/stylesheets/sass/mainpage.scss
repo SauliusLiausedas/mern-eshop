@@ -18,6 +18,8 @@ $main-color2: rgba(255,200,125,1);
     overflow-y: scroll;
 }
 .newsFeedBox {
+    box-sizing: border-box;
+    padding: 10px;
     display: grid;
     grid-template-columns: 65% 35%;
     width: 80%;
@@ -59,6 +61,14 @@ $main-color2: rgba(255,200,125,1);
     text-align: right;
     margin: 5px 20px 0 0;
     color: $main-color2;
+}
+.userThreadDateDiv {
+    color: #c77300;
+    width: 80%;
+    margin: auto;
+}
+.userThreadDate {
+    float: right;
 }
 .threadDateAndButtons {
     display: grid;
