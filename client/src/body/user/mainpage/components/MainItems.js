@@ -31,7 +31,10 @@ class MainItems extends Component {
                 itemsToShow.splice(0, 4);
             }
             if(itemsToShow) {
-                this.setState({itemsToShow: itemsToShow, itemCount: itemCount, isLoading: false})
+                this.setState({itemsToShow: itemsToShow, itemCount: itemCount, isLoading: false});
+                if(loadedItems.length < limit) {
+                    this.setState({noMoreItems: true})
+                }
             }
         } else {
             this.setState({noMoreItems: true, isLoading: false})

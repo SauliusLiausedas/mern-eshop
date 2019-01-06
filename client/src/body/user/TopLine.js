@@ -5,14 +5,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMailBulk, faCar, faCheck, faUser } from '@fortawesome/free-solid-svg-icons'
 library.add(faMailBulk, faCar, faCheck, faUser);
 
-function TopLine() {
+function TopLine(props) {
     return(
         <div className={'mainpageTopLine'}>
             <div className={'topLineText'}>
                 <Link to={'/delivery'}><p className={'topLineItem'}><FontAwesomeIcon icon="car"/> Prekių pristatymas </p> </Link>
                 <Link to={'/contact'}><p className={'topLineItem'}><FontAwesomeIcon icon="mail-bulk"/> Parašyk Mums </p> </Link>
                 <Link to={'/quality'}><p className={'topLineItem'}><FontAwesomeIcon icon="check"/> Kokybė </p> </Link>
-                <Link to={'/login'}><p className={'topLineItem'}><FontAwesomeIcon icon="user"/> Prisijungti </p> </Link>
+                {props.loggedIn ? <Link to={'/login'}><p className={'topLineItem'}><FontAwesomeIcon icon="user"/> Atsijungti </p> </Link> :
+                    <Link to={'/login'}><p className={'topLineItem'}><FontAwesomeIcon icon="user"/> Prisijungti </p> </Link> }
             </div>
         </div>
     )

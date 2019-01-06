@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import '../../stylesheets/sass/Login.css'
 import userActions from '../../services/userActions'
 import LoadingPage from "../other/LoadingPage";
+import { connect } from "react-redux";
+import actions from "../../actions/actions";
 
 class Login extends Component {
     constructor(props) {
@@ -26,9 +28,9 @@ class Login extends Component {
         e.preventDefault();
         this.setState({isLoading: true});
         let signInResponse = await userActions.userLogin(this.state.userName, this.state.userPassword);
-        console.log(signInResponse);
         if(signInResponse && signInResponse.token) {
             localStorage.setItem('token', signInResponse.token);
+            this.props.login();
             this.props.history.push('/admin');
         } else {
             this.setState({ isLoading: false, wrongCredentials: true })
@@ -38,6 +40,11 @@ class Login extends Component {
     render() {
         return (
             <div className={'background-login'}>
+                <div>
+                    <button onClick={this.props.decrement}> Counter -1 </button>
+                    {this.props.counter}
+                    <button onClick={this.props.increment}> Counter +1 </button>
+                </div>
                 {this.state.isLoading ?
                 <form className={'loginInputDiv'}>
                     <LoadingPage page={'login'}/>
@@ -68,4 +75,9 @@ class Login extends Component {
     }
 }
 
-export default Login
+// export default Login
+function mapStateToProps(state) {
+    return state
+}
+
+export default connect(mapStateToProps, actions)(Login);

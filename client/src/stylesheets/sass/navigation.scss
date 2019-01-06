@@ -12,7 +12,7 @@ $links-font-size: 1.2em;
     text-align: center;
 
     .navItem {
-        color: $main-color6;
+        color: $main-color3;
         font-size: $links-font-size;
         margin-left: 3%;
         list-style-type: none;
@@ -77,19 +77,19 @@ $links-font-size: 1.2em;
     padding: 0;
     .userNavItem {
         display: inline;
-        color: $main-color6;
+        color: seashell;
         font-size: $links-font-size;
         padding: 0 15px;
         margin-left: 15px;
     }
     a:hover {
-      border-bottom: 2px solid $main-color6;
+      border-bottom: 2px solid seashell;
     }
 }
 .subNavigation {
     z-index: 999;
     width: 100%;
-    padding: 5px;
+    padding: 10px;
     background-color: $main-color4;
     box-shadow: 0 2px 3px 2px $main-color4;
     text-align: center;

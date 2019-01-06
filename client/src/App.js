@@ -12,6 +12,8 @@ import Users from './body/admin/Users';
 import SelectedItem from "./body/user/selectedItem/SelectedItem";
 import SelectedCategory from "./body/user/selectedcategory/SelectedCategory";
 import News from "./body/user/news/News";
+import { connect } from 'react-redux';
+import actions from './actions/actions';
 
 
 class App extends Component {
@@ -21,12 +23,12 @@ class App extends Component {
             routerItems: ''
         }
     }
-    async componentWillMount() {
-        // const items = await navigationActions.getNavItems();
-        // const routerItems = [];
-        // items.forEach(item => routerItems.push(item.href));
-        // this.setState({routerItems: routerItems})
-    }
+    // async componentWillMount() {
+    //     const items = await navigationActions.getNavItems();
+    //     const routerItems = [];
+    //     items.forEach(item => routerItems.push(item.href));
+    //     this.setState({routerItems: routerItems})
+    // }
 
     render() {
     return (
@@ -39,8 +41,8 @@ class App extends Component {
                       <Route path="/produktai/:category/:name" component={ SelectedItem } exact />
                       <Route path="/naujienos" component={ News } exact />
                       <Route path="/login" component={ Login } exact/>
-                      <Route path="/admin/" component={ AdminHome } exact/>
-                      <Route path="/admin/pagrindinis" component={ MainPage } exact/>
+                      <Route path="/admin/" component={ MainPage } exact/>
+                      <Route path="/admin/pagrindinis" component={ AdminHome } exact/>
                       <Route path="/admin/vartotojai" component={ Users } exact/>
                       <Route path="/admin/prekes" component={ AdminItems } exact/>
                       <Route component={ ErrorPage } />
@@ -52,4 +54,8 @@ class App extends Component {
   }
 }
 
-export default App;
+function mapStateToProps(state) {
+    return state
+}
+
+export default connect(mapStateToProps, actions)(App);

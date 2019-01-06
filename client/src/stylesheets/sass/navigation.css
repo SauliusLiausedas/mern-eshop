@@ -7,7 +7,7 @@
   box-shadow: 0 2px 3px 2px #ffa52a;
   text-align: center; }
   .navigation .navItem {
-    color: #ffeb2a;
+    color: #ffb652;
     font-size: 1.2em;
     margin-left: 3%;
     list-style-type: none;
@@ -67,17 +67,17 @@
   padding: 0; }
   .userNavItems .userNavItem {
     display: inline;
-    color: #ffeb2a;
+    color: seashell;
     font-size: 1.2em;
     padding: 0 15px;
     margin-left: 15px; }
   .userNavItems a:hover {
-    border-bottom: 2px solid #ffeb2a; }
+    border-bottom: 2px solid seashell; }
 
 .subNavigation {
   z-index: 999;
   width: 100%;
-  padding: 5px;
+  padding: 10px;
   background-color: #ff9400;
   box-shadow: 0 2px 3px 2px #ff9400;
   text-align: center; }

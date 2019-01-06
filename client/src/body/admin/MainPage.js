@@ -5,6 +5,9 @@ import LoadingPage from "../other/LoadingPage";
 import MainText from "./components/MainText";
 import AdminNavigation from './components/AdminNavigation';
 import UserNavigation from '../user/Navigation/UserNavigation';
+import {connect} from "react-redux";
+import actions from "../../actions/actions";
+import TopLine from "../user/TopLine";
 
 class MainPage extends Component {
     constructor(props) {
@@ -29,6 +32,7 @@ class MainPage extends Component {
             return (
                 <div>
                     <div className={'background-mainPage'}>
+                        <TopLine loggedIn={this.props.loggedIn}/>
                         <UserNavigation/>
                         <AdminNavigation/>
                         <MainText/>
@@ -39,4 +43,9 @@ class MainPage extends Component {
     }
 }
 
-export default MainPage
+// export default MainPage
+function mapStateToProps(state) {
+    return state
+}
+
+export default connect(mapStateToProps, actions)(MainPage);
