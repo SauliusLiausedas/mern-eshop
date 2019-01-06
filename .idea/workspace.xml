@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="9540a65f-bce7-4d67-ac7a-8813cc79456e" name="Default Changelist" comment="Fix navigation&#10;Add SelectedCategory Component&#10;Add MainItems section to MainPage">
-      <change afterPath="$PROJECT_DIR$/client/src/body/user/Navigation/UserNavigation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/body/user/mainpage/components/MainItems.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/body/user/selectedcategory/SelectedCategory.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/Saulius.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/Saulius.xml" afterDir="false" />
+    <list default="true" id="9540a65f-bce7-4d67-ac7a-8813cc79456e" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/client/src/body/user/mainpage/components/MainPageItemView.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/stylesheets/sass/selectedItem.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/body/admin/AdminHome.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/body/admin/AdminHome.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/body/admin/AdminItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/body/admin/AdminItems.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/body/admin/MainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/body/admin/MainPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/body/admin/Users.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/body/admin/Users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/body/user/UserNavigation.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/body/user/UserSubNavigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/body/user/Navigation/UserSubNavigation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/body/user/mainpage/UserMainPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/body/user/mainpage/UserMainPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/body/other/LoadingPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/body/other/LoadingPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/body/user/mainpage/components/ItemDescription.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/body/user/mainpage/components/ItemDescription.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/body/user/mainpage/components/MainItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/body/user/mainpage/components/MainItems.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/body/user/mainpage/components/PromotedItems.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/body/user/mainpage/components/PromotedItems.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/body/user/selectedItem/SelectedItem.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/body/user/selectedItem/SelectedItem.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/services/helperfunctions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/helperfunctions.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/services/itemActions.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/services/itemActions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/stylesheets/sass/.sass-cache/d38ed8996414255795018ecb0215902bef8ffd21/loading.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/stylesheets/sass/.sass-cache/d38ed8996414255795018ecb0215902bef8ffd21/loading.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/stylesheets/sass/.sass-cache/d38ed8996414255795018ecb0215902bef8ffd21/userMainPage.scssc" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/stylesheets/sass/.sass-cache/d38ed8996414255795018ecb0215902bef8ffd21/userMainPage.scssc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/stylesheets/sass/loading.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/stylesheets/sass/loading.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/stylesheets/sass/loading.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/stylesheets/sass/loading.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/stylesheets/sass/loading.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/stylesheets/sass/loading.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/stylesheets/sass/userMainPage.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/stylesheets/sass/userMainPage.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/stylesheets/sass/userMainPage.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/stylesheets/sass/userMainPage.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/stylesheets/sass/userMainPage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/stylesheets/sass/userMainPage.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/api/items.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api/items.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -49,8 +50,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/body/user/mainpage/UserMainPage.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="483">
-              <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
+            <state relative-caret-position="307">
+              <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+              <folding>
+                <element signature="e#0#41#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/client/src/stylesheets/sass/userMainPage.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="469">
+              <caret line="96" column="23" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/body/user/selectedItem/SelectedItem.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="344">
+              <caret line="48" column="67" selection-start-line="48" selection-start-column="67" selection-end-line="48" selection-end-column="67" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -59,10 +81,19 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/body/user/Navigation/UserNavigation.js">
+        <entry file="file://$PROJECT_DIR$/client/src/stylesheets/sass/selectedItem.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="220">
-              <caret line="41" column="97" selection-start-line="41" selection-start-column="97" selection-end-line="41" selection-end-column="97" />
+            <state relative-caret-position="208">
+              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/src/body/user/mainpage/components/PromotedItems.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="819">
+              <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -71,19 +102,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/services/helperfunctions.js">
+        <entry file="file://$PROJECT_DIR$/client/src/body/user/mainpage/components/MainPageItemView.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="35" column="41" lean-forward="true" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/body/user/Navigation/UserSubNavigation.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1066">
-              <caret line="41" column="87" lean-forward="true" selection-start-line="41" selection-start-column="87" selection-end-line="41" selection-end-column="87" />
+            <state relative-caret-position="17">
+              <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
               <folding>
                 <element signature="e#0#26#0" expanded="true" />
               </folding>
@@ -92,10 +114,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/body/user/mainpage/components/PromotedItems.js">
+        <entry file="file://$PROJECT_DIR$/client/src/body/user/mainpage/components/MainItems.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="409">
-              <caret line="59" column="26" lean-forward="true" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
+            <state relative-caret-position="14">
+              <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -106,32 +128,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/src/services/itemActions.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="284">
-              <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/client/src/body/user/mainpage/components/MainItems.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="332">
-              <caret line="22" column="51" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/body/user/selectedItem/SelectedItem.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="385">
-              <caret line="15" selection-start-line="15" selection-end-line="15" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="315">
+              <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -139,20 +137,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/api/items.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="567">
-              <caret line="42" column="11" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/client/src/body/user/selectedcategory/SelectedCategory.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="457">
-              <caret line="22" column="103" selection-start-line="22" selection-start-column="103" selection-end-line="22" selection-end-column="103" />
-              <folding>
-                <element signature="e#0#41#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="245">
+              <caret line="59" column="36" lean-forward="true" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
             </state>
           </provider>
         </entry>
@@ -161,12 +147,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>Neteisingi</find>
-      <find>wrongC</find>
-      <find>LoadingPage</find>
-      <find>Loading</find>
-      <find>AdminItems</find>
-      <find>users</find>
       <find>s</find>
       <find>adminUser</find>
       <find>isLoadin</find>
@@ -191,11 +171,18 @@
       <find>Nothing</find>
       <find>logout</find>
       <find>.promoIte</find>
+      <find>helpe</find>
+      <find>getItems</find>
+      <find>btn</find>
+      <find>promo</find>
+      <find>console.log</find>
+      <find>id</find>
     </findStrings>
     <replaceStrings>
       <replace>UserSession</replace>
       <replace>item</replace>
       <replace>this.state.</replace>
+      <replace>mainPage</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -204,8 +191,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/models/News.js" />
-        <option value="$PROJECT_DIR$/client/src/services/newsApi.js" />
         <option value="$PROJECT_DIR$/routes/api/news.js" />
         <option value="$PROJECT_DIR$/models/Navigation.js" />
         <option value="$PROJECT_DIR$/routes/api/navItem.js" />
@@ -217,11 +202,9 @@
         <option value="$PROJECT_DIR$/client/src/body/user/mainpage/components/UserNavigation.js" />
         <option value="$PROJECT_DIR$/client/src/body/admin/components/Navigation.js" />
         <option value="$PROJECT_DIR$/client/src/App.css" />
-        <option value="$PROJECT_DIR$/client/src/body/other/LoadingPage.js" />
         <option value="$PROJECT_DIR$/client/src/body/admin/components/AddNewUser.js" />
         <option value="$PROJECT_DIR$/client/src/body/login/Login.js" />
         <option value="$PROJECT_DIR$/routes/api/user/signin.js" />
-        <option value="$PROJECT_DIR$/client/src/stylesheets/sass/loading.scss" />
         <option value="$PROJECT_DIR$/client/src/body/admin/AddItems.js" />
         <option value="$PROJECT_DIR$/client/src/body/admin/components/Items.js" />
         <option value="$PROJECT_DIR$/client/src/body/admin/AdminHome.js" />
@@ -241,20 +224,24 @@
         <option value="$PROJECT_DIR$/models/Item.js" />
         <option value="$PROJECT_DIR$/client/src/body/other/handleErrors/Offline.js" />
         <option value="$PROJECT_DIR$/client/src/body/admin/components/ItemsTable.js" />
-        <option value="$PROJECT_DIR$/client/src/body/user/mainpage/components/ItemDescription.js" />
-        <option value="$PROJECT_DIR$/client/src/stylesheets/sass/userMainPage.scss" />
-        <option value="$PROJECT_DIR$/client/src/body/user/selectedItem/SelectedItem.js" />
         <option value="$PROJECT_DIR$/client/src/App.js" />
         <option value="$PROJECT_DIR$/client/src/body/user/selectedcategory/SelectedCategory.js" />
         <option value="$PROJECT_DIR$/client/src/body/user/UserSubNavigation.js" />
         <option value="$PROJECT_DIR$/client/src/body/user/UserNavigation.js" />
-        <option value="$PROJECT_DIR$/client/src/services/helperfunctions.js" />
         <option value="$PROJECT_DIR$/client/src/stylesheets/sass/userMainPage.css" />
         <option value="$PROJECT_DIR$/client/src/body/user/mainpage/UserMainPage.js" />
+        <option value="$PROJECT_DIR$/client/src/services/helperfunctions.js" />
         <option value="$PROJECT_DIR$/client/src/body/user/mainpage/components/PromotedItems.js" />
+        <option value="$PROJECT_DIR$/client/src/body/user/mainpage/components/MainPageItemView.js" />
+        <option value="$PROJECT_DIR$/client/src/body/user/mainpage/components/ItemDescription.js" />
+        <option value="$PROJECT_DIR$/client/src/stylesheets/sass/loading.scss" />
+        <option value="$PROJECT_DIR$/client/src/body/other/LoadingPage.js" />
+        <option value="$PROJECT_DIR$/client/src/body/user/mainpage/components/MainItems.js" />
         <option value="$PROJECT_DIR$/client/src/services/itemActions.js" />
         <option value="$PROJECT_DIR$/routes/api/items.js" />
-        <option value="$PROJECT_DIR$/client/src/body/user/mainpage/components/MainItems.js" />
+        <option value="$PROJECT_DIR$/client/src/stylesheets/sass/selectedItem.scss" />
+        <option value="$PROJECT_DIR$/client/src/body/user/selectedItem/SelectedItem.js" />
+        <option value="$PROJECT_DIR$/client/src/stylesheets/sass/userMainPage.scss" />
       </list>
     </option>
   </component>
@@ -344,6 +331,21 @@
             <path>
               <item name="mern eshop" type="b2602c69:ProjectViewProjectNode" />
               <item name="mern eshop" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mern eshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mern eshop" type="462c0819:PsiDirectoryNode" />
+              <item name="client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="stylesheets" type="462c0819:PsiDirectoryNode" />
+              <item name="sass" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="mern eshop" type="b2602c69:ProjectViewProjectNode" />
+              <item name="mern eshop" type="462c0819:PsiDirectoryNode" />
               <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -419,7 +421,7 @@
       <workItem from="1545912269411" duration="66000" />
       <workItem from="1545991922365" duration="37546000" />
       <workItem from="1546533548271" duration="36000" />
-      <workItem from="1546698925884" duration="3719000" />
+      <workItem from="1546698925884" duration="11212000" />
     </task>
     <task id="LOCAL-00001" summary="First commit">
       <created>1544000985986</created>
@@ -512,11 +514,18 @@
       <option name="project" value="LOCAL" />
       <updated>1546122236185</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Fix navigation&#10;Add SelectedCategory Component&#10;Add MainItems section to MainPage">
+      <created>1546702880658</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1546702880658</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="164605000" />
+    <option name="totallyTimeSpent" value="172098000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -531,7 +540,7 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49902534" visible="true" weight="0.20469798" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49902534" visible="true" weight="0.20469798" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" sideWeight="0.50097466" side_tool="true" weight="0.16174497" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -547,7 +556,7 @@
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32941177" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.32794118" />
-      <window_info active="true" anchor="bottom" id="Messages" order="9" visible="true" weight="0.14852941" />
+      <window_info anchor="bottom" id="Messages" order="9" weight="0.14852941" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50033045" side_tool="true" weight="0.34762633" />
       <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49966952" weight="0.24558823" />
       <window_info anchor="bottom" id="TypeScript" order="12" weight="0.32924962" />
@@ -652,41 +661,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/src/body/admin/components/CreateNewThread.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="31" column="22" lean-forward="true" selection-start-line="31" selection-start-column="22" selection-end-line="31" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/stylesheets/sass/loading.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-450" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../../Beta media/Bitbucket/berry/beta_trunk/banners/120x600.adform/Standard_main_asset/manifest.json">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/stylesheets/sass/loading.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="35" column="16" selection-start-line="35" selection-start-column="16" selection-end-line="35" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/body/login/Login.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="28" column="36" selection-start-line="28" selection-start-column="36" selection-end-line="28" selection-end-column="36" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/services/navigationActions.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -850,16 +824,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/body/other/LoadingPage.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="259">
-          <caret line="13" column="40" selection-start-line="13" selection-start-column="30" selection-end-line="13" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/server.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="437">
@@ -897,13 +861,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/stylesheets/sass/userMainPage.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2028">
-          <caret line="78" column="26" selection-start-line="78" selection-start-column="26" selection-end-line="78" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/src/body/admin/components/ItemsTable.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="832">
@@ -915,13 +872,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="650">
           <caret line="25" column="14" selection-start-line="25" selection-start-column="14" selection-end-line="25" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/body/user/mainpage/components/ItemDescription.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -945,16 +895,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/body/user/selectedItem/SelectedItem.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="385">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/routes/api/user/logout.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -965,43 +905,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/body/user/mainpage/UserMainPage.js">
+    <entry file="file://$PROJECT_DIR$/client/src/services/helperfunctions.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="24" column="22" lean-forward="true" selection-start-line="24" selection-start-column="22" selection-end-line="24" selection-end-column="22" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="235">
+          <caret line="56" column="11" selection-start-line="56" selection-start-column="11" selection-end-line="56" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/services/itemActions.js">
+    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.es5.d.ts">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="284">
-          <caret line="12" column="31" lean-forward="true" selection-start-line="12" selection-start-column="31" selection-end-line="12" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/api/items.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="567">
-          <caret line="42" column="11" selection-start-line="42" selection-start-column="11" selection-end-line="42" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/body/user/mainpage/components/PromotedItems.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="409">
-          <caret line="59" column="26" lean-forward="true" selection-start-line="59" selection-start-column="26" selection-end-line="59" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="206">
+          <caret line="1255" column="4" selection-start-line="1255" selection-start-column="4" selection-end-line="1255" selection-end-column="4" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/body/user/Navigation/UserNavigation.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="220">
+        <state relative-caret-position="321">
           <caret line="41" column="97" selection-start-line="41" selection-start-column="97" selection-end-line="41" selection-end-column="97" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
@@ -1019,20 +939,108 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/src/services/helperfunctions.js">
+    <entry file="file://$PROJECT_DIR$/client/src/stylesheets/sass/loading.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/stylesheets/sass/loading.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="35" column="41" lean-forward="true" selection-start-line="35" selection-start-column="41" selection-end-line="35" selection-end-column="41" />
+        <state relative-caret-position="400">
+          <caret line="40" column="14" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/body/other/LoadingPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="35" column="36" selection-start-line="35" selection-start-column="36" selection-end-line="35" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/body/user/mainpage/components/MainPageItemView.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="4" column="9" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/body/user/mainpage/UserMainPage.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="307">
+          <caret line="25" column="28" lean-forward="true" selection-start-line="25" selection-start-column="28" selection-end-line="25" selection-end-column="28" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/services/itemActions.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="20" column="43" selection-start-line="20" selection-start-column="43" selection-end-line="20" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/api/items.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="59" column="36" lean-forward="true" selection-start-line="59" selection-start-column="36" selection-end-line="59" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/body/user/mainpage/components/ItemDescription.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="52">
+          <caret line="2" column="9" selection-start-line="2" selection-start-column="9" selection-end-line="2" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/body/user/mainpage/components/PromotedItems.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="41" column="20" selection-start-line="41" selection-start-column="20" selection-end-line="41" selection-end-column="20" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/stylesheets/sass/selectedItem.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="208">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/body/user/selectedItem/SelectedItem.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="48" column="67" selection-start-line="48" selection-start-column="67" selection-end-line="48" selection-end-column="67" />
+          <folding>
+            <element signature="e#0#41#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/client/src/body/user/mainpage/components/MainItems.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="332">
-          <caret line="22" column="51" selection-start-line="22" selection-start-column="51" selection-end-line="22" selection-end-column="51" />
+        <state relative-caret-position="14">
+          <caret line="29" column="40" selection-start-line="29" selection-start-column="40" selection-end-line="29" selection-end-column="40" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/src/stylesheets/sass/userMainPage.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="469">
+          <caret line="96" column="23" selection-start-line="96" selection-start-column="23" selection-end-line="96" selection-end-column="23" />
         </state>
       </provider>
     </entry>

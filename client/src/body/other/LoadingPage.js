@@ -2,6 +2,7 @@ import React from 'react';
 import beeLoader from '../../images/bee-loading.gif';
 import circleLoader from '../../images/loading-circle.gif';
 import '../../stylesheets/sass/loading.css';
+import yellow from '../../images/yellow.gif';
 
 function LoadingPage(props) {
     if(props.page === 'login') {
@@ -28,6 +29,12 @@ function LoadingPage(props) {
     } else if(props.page === 'adminUsers') {
             return(
                 <img src={circleLoader} className={'loadCircle'} alt={'Loading'}/>
+            )
+    } else if(props.page === 'mainItems') {
+            return (
+                <div>
+                    <img src={yellow} className={'mainItemsLoader'} alt={'Loading'}/><br/>
+                </div>
             )
     } else {
         return (

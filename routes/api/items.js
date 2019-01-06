@@ -36,11 +36,28 @@ router.get('/someitems/:limit/:offset', (req, res) => {
     let { limit, offset } = req.params;
     limit = parseInt(limit);
     offset = parseInt(offset);
-    Item.find().skip(offset).limit(limit)
-        .then(items => res.json(items))
-        .catch(err => {
-            res.json(err);
-        });
+    Item.count()
+        .then((allItemCount) => {
+            if(allItemCount < (offset + 1)) {
+                res.json('No more items to load')
+            } else {
+                Item.find().skip(offset).limit(limit)
+                    .then(items => res.json(items))
+                    .catch(err => {
+                        res.json(err);
+                    });
+            }
+        })
+        .catch(err => res.json(err));
+});
+
+// @route   GET api/items/:id
+// @desc    Get item by ID
+router.get('/:id', (req, res) => {
+    const id = req.params.id
+    Item.find({_id: id})
+        .then(item => res.json(item))
+        .catch(err => res.json(err))
 });
 
 // @route   PUT api/items

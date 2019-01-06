@@ -45,28 +45,38 @@
     color: white;
     background-color: #ffa52a; }
 
-/*======================PROMO ITEM================================*/
-.promoItems {
+/*======================MAIN ITEM================================*/
+.mainPageItems {
   display: grid;
   grid-template-columns: 25% 25% 25% 25%;
   width: 80%;
   margin: 3% auto 0 auto;
   text-align: center;
   color: orange; }
-  .promoItems .promoItem {
+  .mainPageItems .mainPageItem {
     display: grid;
-    grid-template-rows: auto auto auto auto;
+    grid-template-rows: auto auto auto;
     width: 100%;
-    height: 300px; }
-    .promoItems .promoItem h3 {
+    height: 300px;
+    margin-bottom: 50px; }
+    .mainPageItems .mainPageItem h3 {
       margin: 0 auto; }
-    .promoItems .promoItem .promoItemPicture {
+    .mainPageItems .mainPageItem .mainPageItemPicture {
       width: 80%;
       height: auto;
       max-width: 180px;
       max-height: 180px; }
-    .promoItems .promoItem .promoDescription {
+    .mainPageItems .mainPageItem .mainPageDescription {
       width: 80%;
       margin: 0 auto; }
+
+.mainItemsBtn {
+  text-align: center;
+  width: 20%;
+  margin: 5% auto; }
+  .mainItemsBtn h3 {
+    color: #c77300; }
+  .mainItemsBtn .loadMoreBtn {
+    color: #c77300; }
 
 /*# sourceMappingURL=userMainPage.css.map */

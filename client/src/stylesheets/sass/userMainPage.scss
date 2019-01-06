@@ -56,31 +56,44 @@
         background-color: #ffa52a;
     }
 }
-/*======================PROMO ITEM================================*/
-.promoItems{
+/*======================MAIN ITEM================================*/
+.mainPageItems{
     display: grid;
     grid-template-columns: 25% 25% 25% 25%;
     width: 80%;
     margin: 3% auto 0 auto;
     text-align: center;
     color: orange;
-    .promoItem {
+    .mainPageItem {
         display: grid;
         grid-template-rows: auto auto auto;
         width: 100%;
         height: 300px;
+        margin-bottom: 50px;
         h3 {
             margin: 0 auto;
         }
-        .promoItemPicture {
+        .mainPageItemPicture {
             width: 80%;
             height: auto;
             max-width: 180px;
             max-height: 180px;
         }
-        .promoDescription {
+        .mainPageDescription {
             width: 80%;
             margin: 0 auto;
         }
+    }
+}
+//=====================MAIN ITEMS==========================
+.mainItemsBtn {
+    text-align: center;
+    width: 20%;
+    margin: 5% auto;
+    h3 {
+        color: #c77300;
+    }
+    .loadMoreBtn {
+        color: #c77300;
     }
 }

@@ -42,6 +42,8 @@ export default class {
         }
     }
 
+    // Add class on state === true
+
     static addClass(state, className) {
         if(state) {
             return `${className}`
@@ -49,4 +51,12 @@ export default class {
             return ''
         }
     }
+
+    // Clone array
+
+    static arrayClone(arr) {
+        return JSON.parse(JSON.stringify(arr));
+    }
+
+
 }

@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import itemActions from "../../../../services/itemActions";
+import helperfunctions from "../../../../services/helperfunctions";
+import MainPageItemView from "./MainPageItemView";
+import LoadingPage from "../../../other/LoadingPage";
 
 class MainItems extends Component {
     constructor(props) {
@@ -8,27 +11,45 @@ class MainItems extends Component {
             isLoading: false,
             itemCount: 0,
             itemsInLine: 4,
-            itemsToShow: []
+            itemsToShow: [],
+            noMoreItems: false
         }
     }
 
     componentDidMount() {
-        this.getItems(this.state.itemsInLine*2, this.state.itemCount);
+        this.loadItems(this.state.itemsInLine*2, this.state.itemCount);
     }
 
-    async getItems(limit, offset) {
-        let itemsToShow = await itemActions.getSomeItems(limit, offset);
-        if(itemsToShow) {
-            //TODO implement itemstoshow with .push()
-            console.log(itemsToShow);
-            this.setState({itemsToShow: itemsToShow})
+    async loadItems(limit, offset) {
+        this.setState({isLoading: true})
+        let itemsShowing = helperfunctions.arrayClone(this.state.itemsToShow);
+        let loadedItems = await itemActions.getSomeItems(limit, offset);
+        const itemCount = limit + offset
+        if(typeof(loadedItems) !== 'string') {
+            let itemsToShow = itemsShowing.concat(loadedItems);
+            if(this.state.itemCount > 11) {
+                itemsToShow.splice(0, 4);
+            }
+            if(itemsToShow) {
+                this.setState({itemsToShow: itemsToShow, itemCount: itemCount, isLoading: false})
+            }
+        } else {
+            this.setState({noMoreItems: true, isLoading: false})
         }
     }
 //TODO item show component
     render() {
-        return(
+        const { itemsToShow, itemsInLine, itemCount, isLoading } = this.state;
+        return (
             <div>
-                MAIN ITEM
+                <h2>Visos prekės</h2>
+                <MainPageItemView items={itemsToShow}/>
+                <div className={'mainItemsBtn'}>
+                    {isLoading ? <LoadingPage page={'mainItems'}/> : ''}
+                    {this.state.noMoreItems ? <h3>Peržiūrėjote visas prekes</h3>
+                        : <button className={'btn loadMoreBtn'}
+                                  onClick={() => this.loadItems(itemsInLine, itemCount)}>Rodyti daugiau</button>}
+                </div>
             </div>
         )
     }
