@@ -19,7 +19,13 @@ class SelectedCategory extends Component {
     componentWillMount() {
         const category = (this.props && this.props.match && this.props.match.params && this.props.match.params.category) || '';
         if(category) {
-            this.loadCategory(category)
+            this.loadCategory(category);
+        }
+    }
+    componentWillReceiveProps(nextProps, nextContext) {
+        const category = (nextProps && nextProps.match && nextProps.match.params && nextProps.match.params.category) || '';
+        if(category) {
+            this.loadCategory(category);
         }
     }
 
@@ -27,7 +33,7 @@ class SelectedCategory extends Component {
         this.setState({isLoading: true});
         let categoryItems = await itemActions.getCategoryItems(category);
         if(typeof(categoryItems) !== 'string') {
-            this.setState({categoryItems: categoryItems, isLoading: false, categoryName: category})
+            this.setState({categoryItems: categoryItems, isLoading: false, categoryName: category, error: false})
         } else {
             this.setState({error: true, isLoading: false, categoryName: category})
         }
@@ -42,6 +48,7 @@ class SelectedCategory extends Component {
                 </div>
             )
         } else {
+            console.log(this.state);
             return (
                 <div>
                     <TopLine/>

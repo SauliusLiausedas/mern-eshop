@@ -1,81 +1,84 @@
 const express = require('express');
 const router = express.Router();
 const User = require('../../../models/User');
-const UserSession = require('../../../models/UserSession');
+const nodemailer = require('nodemailer');
 
+// @route   PUT api/user/signup
+// @desc    Register new user
 router.post('/', (req, res) => {
-   const { body } = req;
-   const { name, password, admin, token } = body;
-   let authorized = false;
-   let userId = '';
-    
-    UserSession.find({
-        _id: token
-    }).then(session =>{
-        userId = session[0].sessionId;
-        User.find({
-            _id: userId,
-            isAdministrator: true
-         })
-         .then((user) => {
-             if(user.length === 1) {
-                 authorized = true;
-                 if(!name) {
-                    res.send({
-                        success: false,
-                        message: 'Username is required!'
-                    })
-                } else if(!password) {
-                    res.send({
-                        success: false,
-                        message: 'Password is required!'
-                    })
-                } else {
-                    User.find({
-                        name: name
-                    }, (err, previousUsers) => {
-                        if (err) {
-                            res.send({
-                                success: false,
-                                message: 'Server Error'
-                            })
-                        } else if (previousUsers.length > 0) {
-                            res.send({
-                                success: false,
-                                message: 'User already exists.'
-                            })
-                        } else {
-                                if(authorized) {
-                                        const newUser = new User();
-                                        newUser.name = name;
-                                        newUser.password = newUser.generateHash(password);
-                                        if(admin) {
-                                            newUser.isAdministrator = true
-                                        }
-                                        newUser.save().then(() => res.send({
-                                            success: true,
-                                            message: `User successfully added with name ${newUser.name}`
-                                        }))
-                                        .catch(err => res.json(err))
-                                } else {
-                                    res.send({
-                                        success: false,
-                                        message: 'Unauthorized'
-                                    })
+    const { email, firstName, lastName, password } = req.body;
+    if(email) {
+        if(password) {
+            User.find({email: email})
+                .then(users => {
+                    if (users.length > 0) {
+                        res.send({
+                            success: false,
+                            message: `Šis el. paštas jau užregistruotas`
+                        })
+                    } else {
+                        const newUser = new User();
+                        if(newUser.validEmail(email)) {
+                            const transporter = nodemailer.createTransport({
+                                service: 'gmail',
+                                auth: {
+                                    user: 'mostlytolearn@gmail.com',
+                                    pass: 'Keturiasdesimtspenki56'
                                 }
+                            });
+                            newUser.email = email;
+                            newUser.password = newUser.generateHash(password);
+                            if (firstName) {
+                                newUser.firstName = firstName;
+                            }
+                            if (lastName) {
+                                newUser.lastName = lastName;
+                            }
+                            newUser.save().then(() => {
+                                res.send({
+                                    success: true,
+                                    message: `Vartotojas ${newUser.email} sėkmingai priregistruotas.`
+                                });
+                                User.find({email: email})
+                                    .then((user) => {
+                                        const mailOptions = {
+                                            from: 'mostlytolearn@gmail.com',
+                                            to: email,
+                                            subject: 'Patvirtinkite savo el. pašto adresą',
+                                            text: `Jūsų elektroninio pašto patvirtinimo nuoroda - http://localhost:5000/api/user/confirmation/${user[0]._id}`
+                                        };
+                                        transporter.sendMail(mailOptions, function(error, info) {
+                                            if(error) {
+                                                res.json(`Error sending email ${error}`);
+                                            } else {
+                                                console.log(info);
+                                            }
+                                        });
+                                    })
+                                    .catch((err) => console.log(err));
+                            })
+                                .catch(err => res.json(err))
+                        } else {
+                            return res.send({
+                                success: false,
+                                message: 'Neteisingas elektroninio pašto adresas'
+                            });
                         }
-                    });
-                }
-             } else {
-                return res.send({
-                    success: false,
-                    message: 'Must be admin to add users'
+                    }
                 })
-             }
-         })
-         .catch(err => console.log(err))
-    
-    });
+                .catch(err => res.json(err));
+        } else {
+            res.send({
+                success: false,
+                message: 'Užpildykite privalomus laukelius'
+            })
+        }
+    } else {
+        res.send({
+            success: false,
+            message: 'Užpildykite privalomus laukelius'
+        })
+    }
 });
 
 module.exports = router;

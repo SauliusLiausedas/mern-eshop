@@ -10,10 +10,25 @@ export default function reducer(state = {}, action) {
                 ...state,
                 counter: state.counter - 1
             };
-        case 'LOGIN':
+        case 'ADDONECARTITEMCOUNT':
             return {
                 ...state,
-                loggedIn: true
+                cartItemsCount: state.cartItemsCount + 1
+            };
+        case 'REMOVEONECARTITEMCOUNT':
+            return {
+                ...state,
+                cartItemsCount: state.cartItemsCount - 1
+            };
+        case 'SETCARTITEMSCOUNT':
+            return {
+                ...state,
+                cartItemsCount: action.count
+            };
+        case 'ADDCARTITEM':
+            return {
+                ...state,
+                cartItems: action.item
             };
         default:
             return {

@@ -5,15 +5,16 @@ const UserSession = require('../../../models/UserSession');
 
 router.post('/', (req, res) => {
     const { body } = req;
-    const { name, password } = body;
-    if(!name || !password) {
+    const { email, password } = body;
+
+    if(!email || !password) {
         res.send({
             success: false,
-            message: 'Fill all fields!'
+            message: 'Pamiršote įvesti duomenis'
         });
     } else {
         User.find({
-            name: name,
+            email: email,
             isDeleted: false
         }, (err, users) => {
             if(err) {
@@ -25,18 +26,26 @@ router.post('/', (req, res) => {
                 if (users.length !== 1) {
                     return res.send({
                         success: false,
-                        message: 'No such username or user deleted'
+                        message: 'Tokio vartotojo nėra'
                     });
                 }
                 const user = users[0];
                 if (!user.validPassword(password)) {
                     return res.send({
                         success: false,
-                        message: 'Bad password'
+                        message: 'Neteisingas slaptažodis'
                     });
+                } else if(!user.confirmed) {
+                    /*
+                     *      User email must be confirmed to login
+                     */
+                    return res.send({
+                        success: false,
+                        message: `Vartotojo el. paštas dar nepatvirtintas`
+                    })
                 } else {
                     /*
-                     *    Delete inactive sessions
+                     *      Delete inactive sessions
                      */
                     const userId = users[0]._id;
                     UserSession.find({sessionId: userId}, (err, session) => {
@@ -55,7 +64,6 @@ router.post('/', (req, res) => {
                     /*
                      *  Create New Session
                      */
-
                     const userSession = new UserSession();
                     userSession.sessionId = user._id;
                     // userSession.save().then(session => res.json(session));
@@ -65,12 +73,24 @@ router.post('/', (req, res) => {
                                 success: false,
                                 message: 'Server error' + err
                             });
+                        } else {
+                            User.find({ _id: user._id})
+                                .then(user => {
+                                   if(user[0].isAdministrator) {
+                                       return res.send({
+                                           success: true,
+                                           message: 'Signed in as admin',
+                                           token: doc._id
+                                       })
+                                   } else {
+                                       return res.send({
+                                           success: true,
+                                           message: 'Signed In'
+                                       })
+                                   }
+                                })
+                                .catch(err => res.json(err));
                         }
-                        return res.send({
-                            success: true,
-                            message: 'Signed In',
-                            token: doc._id
-                        })
                     });
                 }
             }

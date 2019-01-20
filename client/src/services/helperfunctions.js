@@ -6,11 +6,12 @@ export default class {
     static async verification() {
         const token = localStorage.getItem('token');
         let authorized = await userActions.userVerify(token);
+        console.log(authorized);
         if (authorized && authorized.success) {
             return true
         } else {
             window.alert('Privalote prisijungti, jei norite čia būti');
-            window.location.replace('/login');
+            window.location.replace('/prisijungti');
             return false
         }
     }
@@ -36,12 +37,12 @@ export default class {
         localStorage.removeItem("token");
         let logged = await userActions.logout(token);
         if(logged.success) {
-            window.location.replace('/login')
+            window.location.replace('/prisijungti')
         } else {
             return false
         }
     }
-
+    
     // Add class on state === true
 
     static addClass(state, className) {

@@ -6,7 +6,7 @@ import MainText from "./components/MainText";
 import AdminNavigation from './components/AdminNavigation';
 import UserNavigation from '../user/Navigation/UserNavigation';
 import {connect} from "react-redux";
-import actions from "../../actions/actions";
+import {actions} from "../../actions/actions";
 import TopLine from "../user/TopLine";
 
 class MainPage extends Component {

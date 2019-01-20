@@ -1,0 +1,15 @@
+.mainConfirm {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://www.bbcgoodfood.com/sites/default/files/glossary/honey.jpg');
+  background-position: 500px 50px;
+  background-size: cover;
+  .confirmed {
+    width: 80%;
+    margin: 200px auto;
+    text-align: center;
+  }
+}

@@ -32,10 +32,10 @@ class UserNavigation extends Component {
                     <ul className={'userNavItems'}>
                         <li className={'userNavItem'}><Link to={'/'}> Pagrindinis </Link></li>
                         <li className={'userNavItem'} onMouseEnter={() => this.subNavShow('medus')}><Link
-                                to={'/medus'}> Medus &nbsp;<FontAwesomeIcon icon="angle-down"/></Link></li>
+                                to={'/produktai/Medus'}> Medus &nbsp;<FontAwesomeIcon icon="angle-down"/></Link></li>
                         <li className={'userNavItem'} onMouseEnter={() => this.subNavShow('biciu produktai')}><Link
-                                to={'/biciu'}> Bičių Produktai <FontAwesomeIcon icon="angle-down"/></Link></li>
-                        <li className={'userNavItem'} onMouseEnter={() => this.subNavShow('kiti')}><Link to={'/kiti'}> Kiti
+                                to={'/produktai/Biciu'}> Bičių Produktai <FontAwesomeIcon icon="angle-down"/></Link></li>
+                        <li className={'userNavItem'} onMouseEnter={() => this.subNavShow('kiti')}><Link to={'/produktai/kiti'}> Kiti
                                 Produktai <FontAwesomeIcon icon="angle-down"/></Link></li>
                         <li className={'userNavItem'}><Link to={'/naujienos'}> Naujienos </Link></li>
                         <li className={'userNavItem'}><Link to={'/kontaktai'}> Kontaktai </Link></li>

@@ -1,7 +1,7 @@
 export default class {
 
     // User Login
-    static userLogin(userName, userPassword) {
+    static userLogin(userEmail, userPassword) {
         return fetch('http://localhost:5000/api/user/signin', {
             method: 'POST',
             headers: {
@@ -9,11 +9,35 @@ export default class {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify({
-                "name": userName,
+                "email": userEmail,
                 "password": userPassword
             })
         }).then((res) => res.json())
+            .then(data => {
+                console.log(data);
+                return data
+            })
+            .catch(err => console.log(err))
+    }
+
+    // User registration
+
+    static userRegister(userInfo) {
+        return fetch('http://localhost:5000/api/user/signup', {
+            method: 'POST',
+            headers: {
+                'Accept': 'application/json',
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                "email": userInfo.userEmail,
+                "password": userInfo.userPassword,
+                "firstName": userInfo.firstName,
+                "lastName": userInfo.lastName
+            })
+        }).then((res) => res.json())
             .then(data => data)
+            .catch(err => err)
     }
 
     // Verify User when in /admin
@@ -50,21 +74,20 @@ export default class {
     }
 
     // Add new user
-    static async addUser(name, password, admin, token) {
-        let addUser = fetch(`http://localhost:5000/api/user/signup`, {
+    static async addAdminUser(email, password, admin, token) {
+        return fetch(`http://localhost:5000/api/user/adminsignup`, {
             method: 'POST',
             headers: {
                 'Accept': 'application/json',
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                name: name,
+                email: email,
                 password: password,
                 admin: admin,
                 token: token
             })
-        })
-        return addUser
+        });
     }
     
     // User logout

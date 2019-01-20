@@ -17,7 +17,7 @@ function UsersTable(props) {
             {props.users.map((user, i) => {
                 return (
                     <tr key={i}>
-                        <td>{user.name}</td>
+                        <td>{user.email}</td>
                         <td>{user.isAdministrator ? 'Administratorius' : 'Vartotojas'}</td>
                         <td>{user.date.split('T')[0]} | {user.date.split('T')[1].split('.')[0]}</td>
                         <td>{user.isDeleted ? 'Neaktyvus' : 'Aktyvus'}</td>

@@ -7,7 +7,7 @@
     text-align: center;
     display: grid;
     grid-template-columns: 33% 34% 33%;
-    grid-template-rows: 25% 42% 33%;
+    grid-template-rows: 25% 50% 25%;
     .loginInputDiv {
         user-select: none;
         text-align: center;
@@ -31,9 +31,16 @@
         }
         .password {
             margin-top: 3%;
+            label {
+                .requiredField {
+                    color: red;
+                }
+            }
         }
         .loginBtn {
-            margin-top: 5%;
+            padding: 5px;
+            margin: 5% 5px 0 0;
+            width: 25%;
         }
     }
 }

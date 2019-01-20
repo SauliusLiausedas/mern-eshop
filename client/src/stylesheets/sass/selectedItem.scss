@@ -1,16 +1,35 @@
 .selectedItemGrid {
   display: grid;
-  grid-template-columns: 50% 50%;
-  width: 80%;
+  grid-template-columns: 40% 60%;
+  width: 100%;
   margin: auto;
   .itemCol1 {
-    float: left;
+    align-self: center;
+    justify-self: center;
     .selectedItemPicture {
       width: 200px;
     }
   }
   .itemCol2 {
-    margin-top: 70px;
+    margin-top: 10%;
     float: left;
+    .buySection {
+      .quantitySelect {
+        float: left;
+        height: 50px;
+      }
+      margin-top: 15%;
+      .itemQuantity {
+        width: 50px;
+      }
+      input[type=number]::-webkit-inner-spin-button {
+        opacity: 1;
+      }
+      button {
+        height: 50px;
+        margin-left: 30px;
+        float: left;
+      }
+    }
   }
 }

@@ -1,0 +1,126 @@
+@import 'colorCodes';
+#shoppingCart {
+  box-sizing: border-box;
+  text-align: center;
+  position: fixed;
+  left: 90%;
+  top: 10%;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background-color: $main-color3;
+  border-radius: 50%;
+  box-shadow: 0 0 5px 5px $main-color3;
+  cursor: pointer;
+  transition: all 500ms;
+  #shoppingCartIcon {
+    color: white;
+  }
+  #shoppingCartNotification {
+    border-radius: 100px;
+    background-color: red;
+    height: 13px;
+    width: 13px;
+    position: absolute;
+    top: 0;
+    left: 70%;
+    color: white;
+    font-size: 10px;
+    z-index: 9999;
+  }
+  .show {
+    display: block;
+  }
+}
+.true {
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  transition: all 500ms;
+}
+
+.cartItems {
+  background-color: $main-color3;
+  float: right;
+  box-shadow: 0 0 5px 5px $main-color3;
+  border-radius: 5px;
+  //padding: 5px;
+  cursor: auto;
+  padding: 1px;
+  margin: 0 -8px 0 0;
+  max-height: 330px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  .cartItemCount {
+    margin-bottom: 3px;
+  }
+  p {
+    color: white;
+  }
+  ul {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 0;
+    margin: 0;
+    border-radius: 10px;
+    li {
+      text-align: left;
+      list-style-type: none;
+      width: 400px;
+      height: 100px;
+      padding: 0;
+      margin: 0;
+      border-bottom: 2px solid lightgrey;
+      .listGrid {
+        display: grid;
+        grid-template-areas: 'img name' 'img description' 'img userSelect';
+        grid-template-columns: 30% 68%;
+        grid-column-gap: 2%;
+        grid-template-rows: 30% 41% 29%;
+        padding: 0 3px;
+        height: 100px;
+        hr {
+          border-top: 5px solid red;
+        }
+        .cartItemImg {
+          align-self: center;
+          justify-self: center;
+          grid-area: img;
+          width: 100%;
+          max-height: 90%;
+
+        }
+        h3 {
+          grid-area: name;
+          margin: 5px 0;
+        }
+        p {
+          color: black;
+          grid-area: description;
+          margin: 2px 0;
+          overflow: hidden;
+          font-size: 12px;
+          line-height: 90%;
+        }
+        div {
+          grid-area: userSelect;
+          height: 20px;
+          width: 300px;
+          p {
+            display: inline;
+          }
+          .right {
+            margin-left: 40px;
+          }
+          input {
+            width: 11%;
+            display: inline-block;
+            border: 0;
+            outline-color: $main-color3;
+          }
+          input[type=number]::-webkit-inner-spin-button {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

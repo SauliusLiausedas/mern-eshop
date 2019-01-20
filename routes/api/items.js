@@ -53,7 +53,7 @@ router.get('/someitems/:limit/:offset', (req, res) => {
     let { limit, offset } = req.params;
     limit = parseInt(limit);
     offset = parseInt(offset);
-    Item.count()
+    Item.estimatedDocumentCount()
         .then((allItemCount) => {
             if(allItemCount < (offset + 1)) {
                 res.json('No more items to load')
@@ -78,7 +78,7 @@ router.get('/:id', (req, res) => {
 
 });
 
-// @route   PUT api/items
+// @route   PUT api/items/clickpoints/:id
 // @desc    Edit clickPoints
 router.put('/clickpoints/:id', (req, res) => {
     const id = req.params.id;
@@ -92,6 +92,7 @@ router.put('/clickpoints/:id', (req, res) => {
             message: 'Server error: ' + err
         }))
 });
+
 // @route   POST api/items
 // @desc    Create item
 // @access  Public
