@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Draggable from 'react-draggable';
 import '../../../stylesheets/sass/shoppingCart.scss';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -13,16 +12,15 @@ class ShoppingCart extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            showCartItems: false,
-            itemsInCart: []
+            showCartItems: false
         }
     }
 
     componentWillMount() {
-        const itemsInCart = JSON.parse(localStorage.getItem('cartItems'));
-        if(itemsInCart) {
-            this.setState({itemsInCart: itemsInCart});
-            this.props.setCartItemsCount(itemsInCart.length);
+        let cartItems = JSON.parse(localStorage.getItem('cartItems'));
+        if(cartItems) {
+            this.props.setCartItems(cartItems);
+            this.props.setCartItemsCount(cartItems.length);
         }
     }
 
@@ -37,26 +35,13 @@ class ShoppingCart extends Component {
     }
 
     render() {
-        const { itemsInCart, showCartItems } = this.state;
+        const { showCartItems } = this.state;
         return(
-            <Draggable
-                axis="both"
-                handle="#shoppingCart"
-                defaultPosition={{x: 0, y: 30}}
-                position={null}
-                grid={[10, 10]}
-                scale={1}
-                bounds={{top: 0, bottom: 1000, left: -2000, right: 0}}
-                onStart={this.handleStart}
-                onDrag={this.handleDrag}
-                onStop={this.handleStop}>
-                <div id={`shoppingCart`} title={'Double click to view your items'} className={`${showCartItems}`} onDoubleClick={(e) => this.showCartItems(e)}>
+                <div id={`shoppingCart`} className={`${showCartItems}`} onClick={(e) => this.showCartItems(e)}>
                     <FontAwesomeIcon id={'shoppingCartIcon'} icon="shopping-cart"/>
                     {this.props.cartItemsCount > 0 ? <div id={'shoppingCartNotification'}>{this.props.cartItemsCount}</div> : ''}
-                    {showCartItems > 0 ? <CartItems buyCount={(e) => this.setCartSameItemsCount(e)} items={itemsInCart}/> : ''}
+                    {showCartItems > 0 ? <CartItems buyCount={(e) => this.setCartSameItemsCount(e)} cartItems={this.props.cartItems}/> : ''}
                 </div>
-            </Draggable>
-
         )
     }
 }

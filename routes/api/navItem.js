@@ -61,7 +61,6 @@ function saveItem(name, position, res) {
     newNavItem.save()
         .then(item => res.json(item))
         .catch(err => console.log(err));
-    console.log(newNavItem);
 }
 
 /*

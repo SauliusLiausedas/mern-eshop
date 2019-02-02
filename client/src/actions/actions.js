@@ -1,4 +1,4 @@
-import itemActions from "../services/itemActions";
+// import itemActions from "../services/itemActions";
 
 export const actions = {
     increment: (nodeId) => {
@@ -13,9 +13,9 @@ export const actions = {
             nodeId
         }
     },
-    addCartItem: (item) => {
+    setCartItems: (item) => {
         return {
-            type: 'ADDCARTITEM',
+            type: 'SETCARTITEMS',
             item: item
         }
     },
@@ -30,20 +30,20 @@ export const actions = {
             type: 'SETCARTITEMSCOUNT',
             count: items
         }
-    },
-    testFetchAsync: (data) => {
-        return {
-            type: 'TEST_ASYNC',
-            data: data
-        }
     }
+    // testFetchAsync: (data) => {
+    //     return {
+    //         type: 'TEST_ASYNC',
+    //         data: data
+    //     }
+    // }
 };
 
-export const testFetch = (dispatch, id) => {
-    itemActions.getItemById(id).then((data)=>{
-        dispatch({
-            type: 'TEST_ASYNC',
-            data: data
-        })
-    })
-};
+// export const testFetch = (dispatch, id) => {
+//     itemActions.getItemById(id).then((data)=>{
+//         dispatch({
+//             type: 'TEST_ASYNC',
+//             data: data
+//         })
+//     })
+// };

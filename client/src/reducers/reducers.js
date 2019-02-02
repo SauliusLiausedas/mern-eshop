@@ -25,7 +25,7 @@ export default function reducer(state = {}, action) {
                 ...state,
                 cartItemsCount: action.count
             };
-        case 'ADDCARTITEM':
+        case 'SETCARTITEMS':
             return {
                 ...state,
                 cartItems: action.item

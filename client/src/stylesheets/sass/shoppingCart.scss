@@ -37,7 +37,9 @@
   border-bottom-left-radius: 0 !important;
   transition: all 500ms;
 }
-
+.cartItems::-webkit-scrollbar {
+  display: none;
+}
 .cartItems {
   background-color: $main-color3;
   float: right;
@@ -70,11 +72,12 @@
       margin: 0;
       border-bottom: 2px solid lightgrey;
       .listGrid {
+        user-select: none;
         display: grid;
         grid-template-areas: 'img name' 'img description' 'img userSelect';
         grid-template-columns: 30% 68%;
         grid-column-gap: 2%;
-        grid-template-rows: 30% 41% 29%;
+        grid-template-rows: 30% 35% 35%;
         padding: 0 3px;
         height: 100px;
         hr {
@@ -84,9 +87,9 @@
           align-self: center;
           justify-self: center;
           grid-area: img;
-          width: 100%;
+          width: 85%;
           max-height: 90%;
-
+          border-radius: 10px;
         }
         h3 {
           grid-area: name;
@@ -114,10 +117,25 @@
             width: 11%;
             display: inline-block;
             border: 0;
-            outline-color: $main-color3;
+            outline: none;
+            font-size: 1em;
+            background-color: transparent;
+            text-align: center;
+            user-select: none;
           }
-          input[type=number]::-webkit-inner-spin-button {
-            opacity: 1;
+          button {
+            margin-top: 2px;
+            color: $main-color1;
+            font-size: 1em;
+            border: 1px solid $main-color1;
+            border-radius: 10px;
+          }
+          .buttonRemove {
+            display: inline;
+            float: right;
+            margin-right: 40px;
+            color: red;
+            border: 1px solid red;
           }
         }
       }

@@ -21,7 +21,6 @@ class Navigation extends Component {
 
     componentWillMount() {
         this.setNavItems()
-        console.log(this.props)
     }
 
     async setNavItems() {

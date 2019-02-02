@@ -1,3 +1,4 @@
+@import 'colorCodes';
 .selectedItemGrid {
   display: grid;
   grid-template-columns: 40% 60%;
@@ -20,15 +21,27 @@
       }
       margin-top: 15%;
       .itemQuantity {
+        display: inline;
         width: 50px;
+        height: 50px;
+        font-size: 2em;
+        border: none;
+        outline: none;
+        text-align: center;
       }
       input[type=number]::-webkit-inner-spin-button {
         opacity: 1;
       }
       button {
+        text-align: center;
+        margin: 20px;
+        border-radius: 100%;
+        width: 50px;
         height: 50px;
-        margin-left: 30px;
-        float: left;
+        font-size: 2em;
+        background-color: $main-color1;
+        color: white;
+        border-color: $main-color1;
       }
     }
   }

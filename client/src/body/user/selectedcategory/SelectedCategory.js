@@ -48,7 +48,6 @@ class SelectedCategory extends Component {
                 </div>
             )
         } else {
-            console.log(this.state);
             return (
                 <div>
                     <TopLine/>
