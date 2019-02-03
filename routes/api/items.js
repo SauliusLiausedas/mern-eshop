@@ -5,6 +5,15 @@ const User = require('../../models/User');
 
 const Item = require('../../models/item');
 
+//@route    GET api/items/search
+//desc      Get items for predictive search
+router.get('/search/:searchword', (req, res) => {
+    const searchWord = req.params.searchword;
+    Item.find({"name" : {$regex : searchWord}})
+        .then((items) => res.json(items))
+        .catch(err => res.json(err))
+});
+
 // @route   GET api/items
 // @desc    Get all items
 router.get('/', (req, res) => {

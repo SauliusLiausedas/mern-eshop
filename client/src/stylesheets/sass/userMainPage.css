@@ -30,9 +30,9 @@
   .searchSection .searchBar {
     height: 35px;
     font-size: 25px;
-    padding: 5px 15px;
+    padding: 10px 15px;
     align-self: center;
-    border-radius: 20px;
+    border-radius: 5px;
     outline: none;
     border: 1.5px solid slategray;
     color: slategray;
@@ -45,6 +45,57 @@
   .searchSection .searchBar::selection {
     color: white;
     background-color: #ffa52a; }
+
+/*====================PREDICTIVE SEARCH==========================*/
+.predictiveSearchWindow::-webkit-scrollbar {
+  display: none; }
+
+.predictiveSearchWindow {
+  position: absolute;
+  left: 34%;
+  width: 31.3%;
+  height: 300px;
+  background-color: white;
+  margin-top: -40px;
+  z-index: 1;
+  border: 1.5px solid #ffa52a;
+  border-right: none;
+  overflow-y: scroll;
+  overflow-x: hidden; }
+  .predictiveSearchWindow ul {
+    padding: 0;
+    margin: 0; }
+    .predictiveSearchWindow ul li {
+      list-style-type: none; }
+      .predictiveSearchWindow ul li .resultLine:hover {
+        background-color: #ffc87d; }
+      .predictiveSearchWindow ul li .resultLine {
+        box-sizing: border-box;
+        width: 100%;
+        height: 80px;
+        margin: 0;
+        padding: 5px;
+        display: grid;
+        align-content: center;
+        justify-items: center;
+        grid-template-columns: 20% 80%;
+        grid-template-rows: 50% 50%;
+        grid-template-areas: 'img name' 'img category'; }
+        .predictiveSearchWindow ul li .resultLine .searchImage {
+          width: 80%;
+          height: auto;
+          grid-area: img;
+          border-radius: 40%;
+          box-shadow: 0 0 5px 2px lightgrey; }
+        .predictiveSearchWindow ul li .resultLine h3 {
+          grid-area: name;
+          margin: 0;
+          padding: 0; }
+        .predictiveSearchWindow ul li .resultLine p {
+          grid-area: category;
+          margin: 0;
+          justify-self: left;
+          margin-left: 30px; }
 
 /*======================MAIN ITEM================================*/
 .mainPageItems {
