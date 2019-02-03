@@ -3,6 +3,7 @@ import news from "../../../services/newsApi";
 import NewsFeed from "./components/NewsFeed";
 import TopLine from "../TopLine";
 import UserNavigation from "../Navigation/UserNavigation";
+import MainSearch from "../mainpage/components/MainSearch";
 
 class News extends Component {
     constructor(props) {
@@ -28,6 +29,7 @@ class News extends Component {
         return(
             <div className={'background-mainPage'}>
                 <TopLine/>
+                <MainSearch/>
                 <UserNavigation/>
                 <NewsFeed pageNews={this.state.pageNews}/>
             </div>

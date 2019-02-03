@@ -59,11 +59,6 @@ class Login extends Component {
         } else {
             return (
                 <div className={'background-login'}>
-                    <div>
-                        <button onClick={this.props.decrement}> Counter -1</button>
-                        {this.props.counter}
-                        <button onClick={this.props.increment}> Counter +1</button>
-                    </div>
                     {!this.state.userRegistration ?
                         <form className={'loginInputDiv'}>
                             <div className={'password'}>

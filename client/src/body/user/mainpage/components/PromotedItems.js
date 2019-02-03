@@ -22,7 +22,6 @@ class PromotedItems extends Component {
         this.setState({isLoading: true});
         itemActions.pickPromotedItems(4)
             .then((items) => {
-                console.log(items);
                 this.setState({items: items, isLoading: false})
             })
             .catch((err) => {

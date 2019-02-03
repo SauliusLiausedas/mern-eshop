@@ -5,6 +5,7 @@ import '../../../stylesheets/sass/selectedCategory.css';
 import itemActions from "../../../services/itemActions";
 import LoadingPage from "../../other/LoadingPage";
 import MainPageItemView from "../mainpage/components/MainPageItemView";
+import MainSearch from "../mainpage/components/MainSearch";
 
 class SelectedCategory extends Component {
     constructor(props) {
@@ -51,6 +52,7 @@ class SelectedCategory extends Component {
             return (
                 <div>
                     <TopLine/>
+                    <MainSearch/>
                     <UserNavigation/>
                     {this.state.error ?
                         <div className={'selectedCategory'}><h1>Nėra prekių kategorijoje {this.state.categoryName}</h1>

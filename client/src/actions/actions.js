@@ -25,6 +25,12 @@ export const actions = {
             nodeId
         }
     },
+    login: (boolean) => {
+        return {
+            type: 'LOGIN',
+            loggedIn: boolean
+        }
+    },
     setCartItemsCount: (items) => {
         return {
             type: 'SETCARTITEMSCOUNT',

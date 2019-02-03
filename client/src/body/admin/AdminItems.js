@@ -38,6 +38,7 @@ class AdminItems extends Component {
     async getItems() {
         this.setState({isLoading: true});
         const items = await itemActions.getItems();
+        console.log(items);
         this.setState({isLoading: false, items: items})
     }
 

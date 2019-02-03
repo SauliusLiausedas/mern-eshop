@@ -27,7 +27,7 @@ class MainText extends Component {
     }
 
     editThread(index) {
-        //TODO make thread editable
+        //TODO make thread editableA
         console.log(this.state.pageNews[index])
     }
 

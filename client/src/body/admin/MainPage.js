@@ -20,7 +20,9 @@ class MainPage extends Component {
     async componentWillMount() {
         this.setState({isLoading: true});
         let verified = await help.verification();
-        if (verified) { this.setState({isLoading: false}) }
+        if (verified) {
+            this.setState({isLoading: false})
+        }
     }
 
     render(){

@@ -3,7 +3,7 @@ export default class {
     static getItems() {
         return fetch(`http://localhost:5000/api/items`)
             .then((res) => res.json())
-            .then(data => console.log(data))
+            .then(data => data)
             .catch((err) => console.log(err))
     }
 

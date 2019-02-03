@@ -9,6 +9,7 @@
     width: 90%;
     margin: auto; }
     .mainpageTopLine .topLineText .topLineItem {
+      cursor: pointer;
       display: inline;
       margin-right: 15px; }
     .mainpageTopLine .topLineText .topLineItem:hover {

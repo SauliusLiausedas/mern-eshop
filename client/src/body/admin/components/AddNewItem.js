@@ -49,7 +49,6 @@ class AddNewUser extends Component {
     }
 
     addItemPicture(e) {
-        //TODO checkPictureUrl
         this.setState({picture: e.target.value})
     }
 

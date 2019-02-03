@@ -26,6 +26,7 @@ class App extends Component {
             routerItems: ''
         }
     }
+
     // async componentWillMount() {
     //     const items = await navigationActions.getNavItems();
     //     const routerItems = [];
@@ -47,7 +48,7 @@ class App extends Component {
                       <Route path="/prisijungti" component={ Login } exact />
                       <Route path="/patvirtinimas" component={ Confirmed } exact />
                       <Route path="/patvirtinta" component={ AlreadyConfirmed } exact />
-                      <Route path="/admin/" component={ MainPage } exact />
+                      <Route path="/admin" component={ MainPage } exact />
                       <Route path="/admin/pagrindinis" component={ AdminHome } exact />
                       <Route path="/admin/vartotojai" component={ Users } exact />
                       <Route path="/admin/prekes" component={ AdminItems } exact />

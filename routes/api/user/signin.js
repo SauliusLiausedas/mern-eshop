@@ -76,6 +76,7 @@ router.post('/', (req, res) => {
                         } else {
                             User.find({ _id: user._id})
                                 .then(user => {
+                                    console.log(user[0]);
                                    if(user[0].isAdministrator) {
                                        return res.send({
                                            success: true,

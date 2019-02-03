@@ -3,8 +3,9 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faArrowDown, faAngleDown } from '@fortawesome/free-solid-svg-icons'
-import helperfunctions from '../../../services/helperfunctions';
 import UserSubNavigation from "./UserSubNavigation";
+import {connect} from "react-redux";
+import {actions} from "../../../actions/actions";
 library.add(faArrowDown, faAngleDown);
 
 
@@ -25,7 +26,6 @@ class UserNavigation extends Component {
     }
 
     render() {
-        const token = localStorage.getItem('token');
         return (
             <div>
                 <nav className={'navigation'}>
@@ -39,8 +39,6 @@ class UserNavigation extends Component {
                                 Produktai <FontAwesomeIcon icon="angle-down"/></Link></li>
                         <li className={'userNavItem'}><Link to={'/naujienos'}> Naujienos </Link></li>
                         <li className={'userNavItem'}><Link to={'/kontaktai'}> Kontaktai </Link></li>
-                        {token ? <li className='userNavItem' onClick={() => helperfunctions.logout()}><Link
-                            to={'#'}>Logout</Link></li> : ''}
                     </ul>
                 </nav>
             {this.state.subNavigation ? <UserSubNavigation context={this.state.subNavContext} subnav={() => this.subNavHide()}/> : ''}
@@ -49,4 +47,9 @@ class UserNavigation extends Component {
     }
 }
 
-export default UserNavigation
+// export default UserNavigation
+function mapStateToProps(state) {
+    return state
+}
+
+export default connect(mapStateToProps, actions)(UserNavigation);

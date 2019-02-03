@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import {connect} from "react-redux";
 import { actions } from "../../../actions/actions";
 import helperfunctions from "../../../services/helperfunctions";
+import MainSearch from "../mainpage/components/MainSearch";
 
 class SelectedItem extends Component {
     constructor(props) {
@@ -196,6 +197,7 @@ class SelectedItem extends Component {
             return (
                 <div>
                     <TopLine/>
+                    <MainSearch/>
                     <UserNavigation/>
                     {isLoading ?
                         <LoadingPage/> :

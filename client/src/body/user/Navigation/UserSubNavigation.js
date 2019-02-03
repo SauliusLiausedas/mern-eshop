@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 function UserSubNavigation(props) {
-    //TODO transtion group when appearing
     if(props.context === 'medus') {
         return (
             <nav className={'subNavigation'} onMouseLeave={() => props.subnav()}>

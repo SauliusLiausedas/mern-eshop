@@ -6,7 +6,6 @@ export default class {
     static async verification() {
         const token = localStorage.getItem('token');
         let authorized = await userActions.userVerify(token);
-        console.log(authorized);
         if (authorized && authorized.success) {
             return true
         } else {
@@ -36,11 +35,7 @@ export default class {
         const token = localStorage.getItem('token');
         localStorage.removeItem("token");
         let logged = await userActions.logout(token);
-        if(logged.success) {
-            window.location.replace('/prisijungti')
-        } else {
-            return false
-        }
+        return !!logged.success;
     }
     
     // Add class on state === true

@@ -7,7 +7,7 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import reducer from './reducers/reducers';
 
-const state = { counter: 0, cartItems: [], cartItemsCount: 0};
+const state = { counter: 0, cartItems: [], cartItemsCount: 0, loggedIn: false};
 
 const store = createStore(reducer, state);
 
