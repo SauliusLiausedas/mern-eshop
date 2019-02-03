@@ -4,8 +4,8 @@ import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import CartItems from "./CartItems";
-import {connect} from "react-redux";
-import {actions} from "../../../actions/actions";
+import { connect } from "react-redux";
+import { actions } from "../../../actions/actions";
 library.add(faShoppingCart);
 
 class ShoppingCart extends Component {

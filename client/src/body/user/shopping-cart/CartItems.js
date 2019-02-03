@@ -39,15 +39,20 @@ class CartItems extends Component {
     changeItemCount(i, plus=true, quantity) {
         let itemArray = helperfunctions.arrayClone(this.props.cartItems);
         if(plus) {
-            if(itemArray[i].count < quantity)
-            itemArray[i].count++;
+            if(itemArray[i].count < quantity && itemArray[i].count > 0) {
+                itemArray[i].count++;
+            } else if (itemArray[i].count === 0) {
+                itemArray[i].count++;
+                this.props.setCartItemsCount(this.props.cartItemsCount + 1);
+            }
         }  else {
-            if(itemArray[i].count > 0) {
+            if(itemArray[i].count > 1) {
                 itemArray[i].count--;
             }
         }
         localStorage.setItem('cartItems', JSON.stringify(itemArray));
         this.props.setCartItems(itemArray);
+
     }
 
     removeCartItem(i) {
@@ -55,6 +60,7 @@ class CartItems extends Component {
         itemArray.splice(i, 1);
         localStorage.setItem('cartItems', JSON.stringify(itemArray));
         this.props.setCartItems(itemArray);
+        this.props.setCartItemsCount(this.props.cartItemsCount - 1);
     }
 
     render() {

@@ -8,7 +8,6 @@ import { Link } from 'react-router-dom';
 import {connect} from "react-redux";
 import { actions } from "../../../actions/actions";
 import helperfunctions from "../../../services/helperfunctions";
-import {bindActionCreators} from 'redux';
 
 class SelectedItem extends Component {
     constructor(props) {
@@ -86,6 +85,7 @@ class SelectedItem extends Component {
             this.setItemsInCart(storageCartItems, false);
             this.setQuantityAddToCart(false);
             if (this.state.itemsInCart === 1) {
+                this.props.setCartItemsCount(this.props.cartItemsCount - 1);
                 let itemToDelete = storageCartItems.find(item => item._id === this.state.item._id);
                 storageCartItems = storageCartItems.filter(item => {
                     if (itemToDelete) {
@@ -234,11 +234,17 @@ class SelectedItem extends Component {
     }
 }
 
-function mapDispatchToProps(dispatch) {
-    return {
-        dispatch,
-        ...bindActionCreators(actions, dispatch)
-    }
+// function mapDispatchToProps(dispatch) {
+//     return {
+//         dispatch,
+//         ...bindActionCreators(actions, dispatch)
+//     }
+// }
+//
+// export default connect(null, mapDispatchToProps)(SelectedItem);
+
+function mapStateToProps(state) {
+    return state
 }
 
-export default connect(null, mapDispatchToProps)(SelectedItem);
+export default connect(mapStateToProps, actions)(SelectedItem);
