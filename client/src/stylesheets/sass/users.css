@@ -3,10 +3,15 @@
   width: 100px;
   height: 30px;
   position: relative;
-  left: 75%; }
+  left: 75%;
+}
 
 thead {
-  user-select: none; }
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
 
 .tableDiv {
   width: 80%;
@@ -15,38 +20,53 @@ thead {
   text-align: center;
   height: 500px;
   overflow-y: scroll;
-  transition: all 0.5s; }
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
 
 .short {
   height: 150px;
-  transition: all 0.5s; }
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
 
 .userTable {
   width: 100%;
-  border-collapse: collapse; }
-  .userTable tr {
-    max-height: 100px; }
-  .userTable td {
-    max-height: 100px;
-    max-width: 100px;
-    overflow: hidden;
-    border-top: 1px solid black;
-    border-bottom: 1px solid black; }
+  border-collapse: collapse;
+}
+
+.userTable tr {
+  max-height: 100px;
+}
+
+.userTable td {
+  max-height: 100px;
+  max-width: 100px;
+  overflow: hidden;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+}
 
 .removeButton {
-  user-select: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
   color: #c80000;
-  cursor: pointer; }
+  cursor: pointer;
+}
 
 .removeButton:hover {
-  color: red; }
+  color: red;
+}
 
 .newUser {
   width: 80%;
   margin: 3% auto;
-  text-align: center; }
+  text-align: center;
+}
 
 .submitBtn {
-  margin-top: 20px; }
-
+  margin-top: 20px;
+}
 /*# sourceMappingURL=users.css.map */

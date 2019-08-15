@@ -1,0 +1,190 @@
+#shoppingCart {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  text-align: center;
+  position: fixed;
+  left: 90%;
+  top: 10%;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  background-color: #ffb652;
+  border-radius: 50%;
+  -webkit-box-shadow: 0 0 5px 5px #ffb652;
+          box-shadow: 0 0 5px 5px #ffb652;
+  cursor: pointer;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
+#shoppingCart #shoppingCartIcon {
+  color: white;
+}
+
+#shoppingCart #shoppingCartNotification {
+  border-radius: 100px;
+  background-color: red;
+  height: 13px;
+  width: 13px;
+  position: absolute;
+  top: 0;
+  left: 70%;
+  color: white;
+  font-size: 10px;
+  z-index: 9999;
+}
+
+#shoppingCart .show {
+  display: block;
+}
+
+.true {
+  border-bottom-right-radius: 0 !important;
+  border-bottom-left-radius: 0 !important;
+  -webkit-transition: all 500ms;
+  transition: all 500ms;
+}
+
+.cartItems::-webkit-scrollbar {
+  display: none;
+}
+
+.cartItems {
+  background-color: #ffb652;
+  float: right;
+  -webkit-box-shadow: 0 0 5px 5px #ffb652;
+          box-shadow: 0 0 5px 5px #ffb652;
+  border-radius: 5px;
+  cursor: auto;
+  padding: 1px;
+  margin: 0 -8px 0 0;
+  max-height: 330px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+.cartItems .cartItemCount {
+  margin-bottom: 3px;
+}
+
+.cartItems p {
+  color: white;
+}
+
+.cartItems ul {
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 0;
+  margin: 0;
+  border-radius: 10px;
+}
+
+.cartItems ul li {
+  text-align: left;
+  list-style-type: none;
+  width: 400px;
+  height: 100px;
+  padding: 0;
+  margin: 0;
+  border-bottom: 2px solid lightgrey;
+}
+
+.cartItems ul li .listGrid {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  display: -ms-grid;
+  display: grid;
+      grid-template-areas: 'img name' 'img description' 'img userSelect';
+  -ms-grid-columns: 30% 68%;
+      grid-template-columns: 30% 68%;
+  grid-column-gap: 2%;
+  -ms-grid-rows: 30% 35% 35%;
+      grid-template-rows: 30% 35% 35%;
+  padding: 0 3px;
+  height: 100px;
+}
+
+.cartItems ul li .listGrid hr {
+  border-top: 5px solid red;
+}
+
+.cartItems ul li .listGrid .cartItemImg {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 3;
+  -ms-grid-column: 1;
+  grid-area: img;
+  width: 85%;
+  max-height: 90%;
+  border-radius: 10px;
+}
+
+.cartItems ul li .listGrid h3 {
+  -ms-grid-row: 1;
+  -ms-grid-column: 2;
+  grid-area: name;
+  margin: 5px 0;
+}
+
+.cartItems ul li .listGrid p {
+  color: black;
+  -ms-grid-row: 2;
+  -ms-grid-column: 2;
+  grid-area: description;
+  margin: 2px 0;
+  overflow: hidden;
+  font-size: 12px;
+  line-height: 90%;
+}
+
+.cartItems ul li .listGrid div {
+  -ms-grid-row: 3;
+  -ms-grid-column: 2;
+  grid-area: userSelect;
+  height: 20px;
+  width: 300px;
+}
+
+.cartItems ul li .listGrid div p {
+  display: inline;
+}
+
+.cartItems ul li .listGrid div .right {
+  margin-left: 40px;
+}
+
+.cartItems ul li .listGrid div input {
+  width: 11%;
+  display: inline-block;
+  border: 0;
+  outline: none;
+  font-size: 1em;
+  background-color: transparent;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.cartItems ul li .listGrid div button {
+  margin-top: 2px;
+  color: #ffa52a;
+  font-size: 1em;
+  border: 1px solid #ffa52a;
+  border-radius: 10px;
+}
+
+.cartItems ul li .listGrid div .buttonRemove {
+  display: inline;
+  float: right;
+  margin-right: 40px;
+  color: red;
+  border: 1px solid red;
+}
+/*# sourceMappingURL=shoppingCart.css.map */

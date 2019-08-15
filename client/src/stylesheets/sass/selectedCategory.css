@@ -1,0 +1,10 @@
+.selectedCategory {
+  width: 80%;
+  text-align: center;
+  margin: auto;
+}
+
+.selectedCategory h1 {
+  color: #ff9400;
+}
+/*# sourceMappingURL=selectedCategory.css.map */

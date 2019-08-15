@@ -1,0 +1,61 @@
+.selectedItemGrid {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 40% 60%;
+      grid-template-columns: 40% 60%;
+  width: 100%;
+  margin: auto;
+}
+
+.selectedItemGrid .itemCol1 {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.selectedItemGrid .itemCol1 .selectedItemPicture {
+  width: 200px;
+}
+
+.selectedItemGrid .itemCol2 {
+  margin-top: 10%;
+  float: left;
+}
+
+.selectedItemGrid .itemCol2 .buySection {
+  margin-top: 15%;
+}
+
+.selectedItemGrid .itemCol2 .buySection .quantitySelect {
+  float: left;
+  height: 50px;
+}
+
+.selectedItemGrid .itemCol2 .buySection .itemQuantity {
+  display: inline;
+  width: 50px;
+  height: 50px;
+  font-size: 2em;
+  border: none;
+  outline: none;
+  text-align: center;
+}
+
+.selectedItemGrid .itemCol2 .buySection input[type=number]::-webkit-inner-spin-button {
+  opacity: 1;
+}
+
+.selectedItemGrid .itemCol2 .buySection button {
+  text-align: center;
+  margin: 20px;
+  border-radius: 100%;
+  width: 50px;
+  height: 50px;
+  font-size: 2em;
+  background-color: #ffa52a;
+  color: white;
+  border-color: #ffa52a;
+}
+/*# sourceMappingURL=selectedItem.css.map */

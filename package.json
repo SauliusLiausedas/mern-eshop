@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kentaras/mern-eshop.git"
+    "url": "git+https://github.com/SauliusLiausedas/mern-eshop.git"
   },
   "author": "Saulius",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kentaras/mern-eshop/issues"
+    "url": "https://github.com/SauliusLiausedas/mern-eshop/issues"
   },
-  "homepage": "https://github.com/kentaras/mern-eshop#readme",
+  "homepage": "https://github.com/SauliusLiausedas/mern-eshop#readme",
   "dependencies": {
     "bcrypt": "^3.0.2",
     "body-parser": "^1.18.3",
