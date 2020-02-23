@@ -38,7 +38,11 @@ class Login extends Component {
                 this.props.history.push('/');
             }
         } else {
-            this.setState({ isLoading: false, loginError: signInResponse.message})
+            if (signInResponse) {
+                this.setState({ isLoading: false, loginError: signInResponse.message })
+            } else {
+                this.setState({ isLoading: false, loginError: 'Įvyko klaida' })
+            }
         }
     }
 
